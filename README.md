@@ -10,16 +10,16 @@ A **public, static, gallery-first proof of concept** for discovering, trying, do
 | `resources.json` | Central catalogue: one entry for every resource |
 | `assets/styles.css` | Responsive visual design, including a high-contrast toggle |
 | `assets/app.js` | Vanilla JavaScript search, filtering, preview, download and modal interaction |
-| `resources/*.html` | Eight **independent**, fully self-contained interactive HTML exercises |
+| `resources/*.html` | Eleven **independent**, fully self-contained interactive HTML exercises |
 | `CONTRIBUTOR_REVIEW.md` | Manual review checklist and publication criteria (not an approval system) |
 
-The catalogue contains eight original **demonstration** resources and one **external** example to show how an independently hosted GitHub Pages application can appear in the gallery. The external example links to The Mathy Bit's Kindergarten Maths Apps collection. It is provided solely to illustrate integration, **not** as an approved SPED teaching resource. Its content and reuse terms are controlled by the external creator.
+The catalogue contains eleven original **demonstration** resources and one **external** example to show how an independently hosted GitHub Pages application can appear in the gallery. The external example links to The Mathy Bit's Kindergarten Maths Apps collection. It is provided solely to illustrate integration, **not** as an approved SPED teaching resource. Its content and reuse terms are controlled by the external creator.
 
 No backend, database, accounts, tracking, API keys, Node.js or command-line installation are needed.
 
 ## Singapore SPED curriculum grounding and limitations
 
-The seven core SPED learning domains used for filtering are **Communication and Language; Numeracy; Daily Living Skills; Social-Emotional Learning; Vocational Education; Arts; Physical Education**. These are the named domains in MOE information about SPED schools. **Teaching Supports** is a separate, non-syllabus resource type for tools such as visual timers and token boards; it is not represented as an eighth syllabus. The colour pattern activity is classified under Numeracy, not Arts.
+The seven National SPED Curriculum learning domains used for filtering are **Communication and Language; Numeracy; Daily Living Skills; Social-Emotional Learning; Vocational Education; Arts; Physical Education**. These are the named domains in MOE information about SPED schools. **Digital Literacy** and **Healthy and Safe Relationships** are additionally available as **learning-area filters**, not separate National SPED Curriculum TLSs. These are supplementary discovery labels and must not be represented as verified syllabus alignment. **Teaching Supports** is a separate, non-syllabus resource type for tools such as visual timers and token boards; it is not represented as an eighth syllabus. The colour pattern activity is classified under Numeracy, not Arts.
 
 MOE established a National SPED Curriculum with seven Teaching and Learning Syllabuses (TLSs) after launching the final two in 2024. SPED schools customise learning experiences for the desired outcomes of **Living, Learning and Working**. The catalogue provides **illustrative pedagogical connections only**: it is **not** an official mapping to TLS learning outcomes, proof of instructional efficacy, or evidence of MOE endorsement. A curriculum/subject specialist should validate each proposed learning outcome against the applicable TLS and a school's own curriculum before classroom use.
 
@@ -35,7 +35,7 @@ The displayed *teaching approaches, adaptations, observation checks and real-wor
 
 ## Digital literacy demonstrations (three added samples)
 
-These samples are **not an eighth MOE SPED learning domain**. They explore digital literacy as an enabling skill across existing SPED learning domains and Living, Learning and Working contexts. IMDA's [Digital Skills for Life framework](https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2024/new-digital-skills-for-life-framework) provides a public, general-population reference for using devices, communicating online and safe online behaviour. It is **not** itself a SPED Teaching and Learning Syllabus.
+These samples are **not an additional MOE SPED TLS**. They explore digital literacy as an enabling skill across existing SPED learning domains and Living, Learning and Working contexts. IMDA's [Digital Skills for Life framework](https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2024/new-digital-skills-for-life-framework) provides a public, general-population reference for using devices, communicating online and safe online behaviour. It is **not** itself a SPED Teaching and Learning Syllabus.
 
 | Resource | Simulated practice | Provisional SPED domain | IMDA Digital Skills for Life reference |
 | --- | --- | --- | --- |
@@ -43,7 +43,7 @@ These samples are **not an eighth MOE SPED learning domain**. They explore digit
 | Workplace Message Practice | Select suitable recipient and message, then practise Send | Communication and Language (and vocational use) | Communicate online |
 | Safe Online Choices | Respond to privacy, unsolicited message and kindness situations | Daily Living Skills (discovery category only) | Be safe, smart and kind online |
 
-All three activities are standalone HTML demonstrations with selectable guided or independent support, simulated interactions, and no personal data collection or real messaging. They do not assess real-world independent digital capability without external observation and generalisation. The `Digital Literacy` catalogue **tag** lets educators find all three by typing `digital literacy` into Search.
+All three activities are standalone HTML demonstrations with selectable guided or independent support, simulated interactions, and no personal data collection or real messaging. They do not assess real-world independent digital capability without external observation and generalisation. The **Digital Literacy** filter returns all three activities. **Healthy and Safe Relationships** currently returns the Safe Online Choices activity because it illustrates respectful online interaction; the relevance is provisional and should not be treated as a TLS alignment. Both areas can also be found by keyword search.
 
 **To verify school curriculum alignment**, obtain the actual Digital Literacy curriculum and map each activity to its specific outcomes, level descriptors or indicators, prerequisites, performance criteria and expected prompt levels. Update the `curriculumContext` and assessment notes only after review.
 
@@ -58,7 +58,7 @@ All three activities are standalone HTML demonstrations with selectable guided o
 5. Check that GitHub displays `index.html` and `resources.json` at the repository **root**, with `assets/` and `resources/` as subfolders. Commit the files to the default `main` branch.
 6. Open the repository's **Settings → Pages**. Under **Build and deployment**, select **Deploy from a branch**. Choose `main` and `/(root)`; select **Save**.
 7. Once GitHub Pages has published the site, visit the URL displayed in **Settings → Pages**. For a project repository, the usual URL format is `https://USERNAME.github.io/REPOSITORY-NAME/` (note the repository name at the end).
-8. Visit the homepage. Try all eleven resource previews and downloads. Also test the separate external example link. Use keyboard Tab / Shift+Tab, Enter, Escape and the high-contrast control.
+8. Visit the homepage. Try all eleven local resource previews and downloads.  Use keyboard Tab / Shift+Tab, Enter, Escape and the high-contrast control.
 
 The site uses **relative URLs** so it also works under project URLs rather than only at a domain root. The resource HTML files are self-contained and can be downloaded and opened on their own.
 
@@ -77,6 +77,7 @@ The site uses **relative URLs** so it also works under project URLs rather than 
   "id": "visual-matching",
   "title": "Visual Matching",
   "domain": "Daily Living Skills",
+  "additionalDomains": ["Digital Literacy"],
   "school": "Demonstration Resource",
   "description": "Match everyday pictures.",
   "learningObjective": "Identify matching everyday objects.",
@@ -99,7 +100,7 @@ The site uses **relative URLs** so it also works under project URLs rather than 
 
 The example above is a **template** and does not become a working resource until the corresponding HTML file has been uploaded. The gallery restricts local paths to `resources/filename.html` and external URLs to HTTPS. It skips invalid catalogue entries rather than running unknown HTML in the parent webpage.
 
-Available syllabus learning domains (exact spelling): Communication and Language; Numeracy; Daily Living Skills; Social-Emotional Learning; Vocational Education; Arts; Physical Education. **Teaching Supports** is a separate resource type, not a syllabus learning domain.
+Available syllabus learning domains (exact spelling): Communication and Language; Numeracy; Daily Living Skills; Social-Emotional Learning; Vocational Education; Arts; Physical Education. You may optionally use `additionalDomains` as an array containing `Digital Literacy` and/or `Healthy and Safe Relationships` for relevant activities (these are supplementary filters, not extra MOE TLSs). **Teaching Supports** is a separate resource type, not a syllabus learning domain.
 
 School labels are metadata only. **Do not attribute an unverified contribution to a real school.** Once an actual school has approved its attribution, use the verified name. Each school added to the catalogue automatically appears in the contributor filter.
 
@@ -123,6 +124,21 @@ An external example is included from The Mathy Bit and marked as independently h
 
 **Local testing:** Each file inside `resources/` can be opened directly by double-clicking its HTML file. The **gallery** needs to load `resources.json` over HTTP(S), so use the published GitHub Pages URL for gallery testing. No CLI or local web server is required by administrators.
 
+## Public repository and folder privacy (check before enabling Pages)
+
+**Every folder or file committed to a public GitHub repository can be viewed or downloaded, even if no gallery card links to it.** GitHub Pages also publishes files from its configured publishing source. There are no "private subfolders" in a public repository, and removal from a later commit does not erase an earlier Git commit. Never upload internal drafts, contribution inbox files, school contact directories, learner records, evaluation notes, keys, approval correspondence, or other non-public files to `resources/`, `assets/`, or any other repository folder.
+
+**Recommended separation:**
+- **Public GitHub repository:** only `index.html`, `resources.json`, `assets/`, approved `resources/` HTML and intentionally public documentation.
+- **Organisation-approved private workspace:** incoming contributions, original attachment files, reviewer notes, creator permissions, internal correspondence, and any future contact email/inbox configuration.
+- **Public site:** only approved, minimal creator attribution; never upload a complete submission form response or identifying learner data.
+
+**Before publishing:** visually inspect the GitHub file list and commit history, enable GitHub's private commit email address setting (Settings → Emails → Keep my email addresses private), protect the GitHub account with strong authentication, and restrict repository write access to designated maintainers. Removing a file in a new commit is not sufficient to purge sensitive information from earlier history. If credentials were published, revoke or rotate them and follow GitHub's sensitive-data remediation documentation.
+
+**Code risk:** the gallery safely avoids `innerHTML` for catalogue strings and uses an iframe with `sandbox="allow-scripts"` and no `allow-same-origin`. However, the **Open in new tab** action deliberately launches the local HTML resource **without an iframe sandbox**, and a downloaded HTML file is outside the site's review controls once opened. These actions are appropriate only for trusted, reviewed HTML. **Do not add untrusted community HTML to the `resources/` directory without an explicit code review and approval.** For future untrusted submissions, consider an isolated origin with appropriate security controls; a sandboxed preview is not a malware scanner.
+
+**External-site risk:** the external showcase example opens on a separate website and may have its own data collection. Check the destination and its terms before treating it as an endorsed resource. GitHub may retain visitor IP addresses for security even though the showcase itself has no analytics/tracking script.
+
 ## Security, accessibility and suitability
 
 - Preview of local HTML uses `<iframe sandbox="allow-scripts">` without `allow-same-origin`; third-party websites open in a new tab. Do not paste contributor scripts into the parent gallery. **Sandboxing reduces risk but is not a guarantee that untrusted HTML is safe.** Review downloaded standalone HTML before opening or using it.
@@ -136,3 +152,26 @@ An external example is included from The Mathy Bit and marked as independently h
 Curation is manual: the gallery has **no** public upload feature, user registration, user data store, or admin approval dashboard. A proposed contribution must complete the review steps in [`CONTRIBUTOR_REVIEW.md`](CONTRIBUTOR_REVIEW.md); adding a catalogue entry does **not** indicate approval. A designated site maintainer should verify the creator's attribution and permission, evaluate each resource, review source files for safety, and confirm functionality and accessibility before adding entries. Record the review separately in the school's approved process.
 
 These eleven demonstration files were created for this prototype. External content belongs to its respective creator and may have separate reuse restrictions. Do not imply external creators or schools endorse this showcase.
+
+## Resource removal requests
+
+The public website displays the following footer notice:
+
+> **SPED Interactive Showcase** — If you created or own a resource featured here and would like it removed, or have concerns about attribution, privacy, copyright or suitability, please contact the **SPEDTech team** to request a review.
+
+**No email address is configured.** The public footer shows disabled **Contribute a Resource** and **Request Removal** buttons; neither has a recipient URL, stores data or opens an email app. Once an approved shared contact address is confirmed, the two controls may become separate `mailto:` links with the **same recipient** and distinct subject lines. Do not publish a personal email address unless you accept that it is visible in the public HTML and can be collected by automated tools. The site cannot receive requests directly. Review and removal are managed by the site administrator, who should promptly assess the concern, restrict an inappropriate item if necessary, and document the action through an approved process.
+
+## Future contributor upload feature
+
+The current site has no user uploads, upload inbox, authentication, or review dashboard. GitHub Pages alone cannot securely receive and store submitted HTML files. A later phase could provide a **Submit a Resource** link to an organisation-approved submission form and restricted file store, with privacy and IP declarations and SPEDTech approval *before* manual publication to this public site. Do not enable direct unscreened uploads of HTML/JS to a public gallery.
+
+
+## Simple self-service management (no coding)
+
+Use `manage-resources.html` locally on your laptop (open it as a file). It is an offline catalogue editor; it does not require credentials or send files to a server.
+
+**Add:** Download `resources.json` from GitHub, open it in the editor, fill in the form with the HTML filename and educational details, then download the updated `resources.json`. Upload your HTML to the `resources/` folder and replace `resources.json` in GitHub.
+
+**Remove:** Open `resources.json` in the editor, select Remove next to the entry, download the updated catalogue and replace `resources.json` on GitHub. The resource disappears from the gallery, **but the HTML file remains publicly accessible** until you delete it separately from `resources/` in GitHub. Delete the HTML file and check GitHub history if confidential or rights-sensitive material was mistakenly published.
+
+The editor does not publish directly to GitHub and must not be deployed as an unrestricted public administration feature. This is a lightweight interim workflow. For one-step add/remove, an authenticated GitHub-backed management interface or an automated publishing workflow is necessary.

@@ -248,37 +248,6 @@
     "reviewStatus": "Prototype demonstration — not independently approved for classroom use"
   },
   {
-    "id": "external-kindergarten-apps",
-    "title": "Kindergarten Maths Apps — External Example",
-    "domain": "Numeracy",
-    "school": "External Example (Independent Creator)",
-    "description": "Demonstrates how the gallery links to an independently hosted collection of interactive number activities.",
-    "learningObjective": "Explore the discover-and-launch experience for a third-party GitHub Pages resource.",
-    "suggestedUse": "Use this entry only to explore external hosting; independently evaluate each activity before classroom use.",
-    "adaptations": [
-      "Check third-party accessibility and privacy practices.",
-      "Obtain permission and follow the author’s licence before adapting.",
-      "Replace this demonstration link with a school-approved resource later.",
-      "Verify current external site content, accessibility, privacy and reuse rights independently."
-    ],
-    "tags": [
-      "External Site",
-      "GitHub Pages",
-      "Maths"
-    ],
-    "hostingType": "external",
-    "previewUrl": "https://mathybit.github.io/apps/kindergarten-apps/index.html",
-    "downloadUrl": null,
-    "sourceUrl": "https://mathybit.github.io/kids/",
-    "creator": "The Mathy Bit (independent third party)",
-    "license": "External creator states CC BY-NC 4.0; check terms on their site",
-    "curriculumContext": "External example only. Educational suitability and specific Singapore SPED curriculum relevance have not been assessed.",
-    "instructionalApproach": "Inspect each linked activity and its instructions before deciding whether it is suitable for a lesson.",
-    "assessmentCheck": "Determine a relevant learning objective and a real-world assessment before classroom use.",
-    "transferTask": "Use the external link only as a demonstration of catalogue navigation unless separately reviewed and approved.",
-    "reviewStatus": "External demonstration — classroom suitability unverified"
-  },
-  {
     "id": "digital-work-checklist",
     "title": "Digital Work Checklist",
     "domain": "Vocational Education",
@@ -308,7 +277,10 @@
     "instructionalApproach": "Model opening a job app and checking a task card; then run guided practice with physical materials, fade cues, and revisit in a real task context.",
     "assessmentCheck": "Record whether the learner independently identifies the correct app, selects the intended job card, marks each completed step, and requests verification; record prompts separately from task accuracy.",
     "transferTask": "Use an approved digital checklist alongside a real school or vocational routine, with staff supervision and data-privacy checks.",
-    "reviewStatus": "Prototype demonstration — digital literacy / TLS alignment requires curriculum review"
+    "reviewStatus": "Prototype demonstration — digital literacy / TLS alignment requires curriculum review",
+    "additionalDomains": [
+      "Digital Literacy"
+    ]
   },
   {
     "id": "workplace-message-practice",
@@ -340,7 +312,10 @@
     "instructionalApproach": "Model the situation, recipient and message choice, then practise supported selection; gradually vary contexts and reduce prompts. A message-selection simulation does not test spontaneous digital writing.",
     "assessmentCheck": "Across different scenarios, note correct recipient, relevance of message, prompting needed and ability to generalise the purpose of the communication.",
     "transferTask": "With appropriate permissions, practise sending a real workplace update through a school-approved channel to an agreed communication partner.",
-    "reviewStatus": "Prototype demonstration — digital literacy / TLS alignment requires curriculum review"
+    "reviewStatus": "Prototype demonstration — digital literacy / TLS alignment requires curriculum review",
+    "additionalDomains": [
+      "Digital Literacy"
+    ]
   },
   {
     "id": "safe-online-choices",
@@ -368,10 +343,14 @@
     "sourceUrl": null,
     "creator": "POC demonstration team",
     "license": "Original demonstration file; review before redistribution",
-    "curriculumContext": "[Provisional] Digital safety in everyday living, broadly informed by IMDA Digital Skills for Life (be safe, smart and kind online). Daily Living Skills is a suggested discovery category, not a verified MOE SPED TLS mapping.",
+    "curriculumContext": "[Provisional] Digital safety in everyday living, broadly informed by IMDA Digital Skills for Life (be safe, smart and kind online). Daily Living Skills is a suggested discovery category, not a verified MOE SPED TLS mapping. [Provisional] The respectful online communication scenario may be a discussion starter for Healthy and Safe Relationships, but is not a verified HSR learning-outcome mapping.",
     "instructionalApproach": "Model a short decision routine: pause, keep information private, check with a trusted person, and communicate respectfully. Practise with supportive feedback and then novel examples.",
     "assessmentCheck": "Track the learner’s choice, explanation or help-seeking response across varied examples and the level of prompting required; do not treat repeated quiz answers as proof of real-world safety skills.",
     "transferTask": "During supervised real digital activities, rehearse seeking help before sharing information or responding to unexpected messages.",
-    "reviewStatus": "Prototype demonstration — digital literacy / TLS alignment requires curriculum review"
+    "reviewStatus": "Prototype demonstration — digital literacy / TLS alignment requires curriculum review",
+    "additionalDomains": [
+      "Digital Literacy",
+      "Healthy and Safe Relationships"
+    ]
   }
 ]
