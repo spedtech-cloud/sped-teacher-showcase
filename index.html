@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#002b49">
+  <meta name="description" content="Discover, try and download interactive demonstration teaching resources for Singapore SPED educators.">
+  <title>SPED Interactive Showcase — Prototype</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand" aria-label="SPED Interactive Showcase">
+        <span class="brand-mark" aria-hidden="true">S<span>+</span></span>
+        <span class="brand-wordmark">SPED <strong>Interactive Showcase</strong><small>Prototype resource library</small></span>
+      </div>
+      <button id="contrastButton" type="button" class="utility-button" aria-pressed="false">
+        <span aria-hidden="true">◐</span> High contrast: Off
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="container hero-layout">
+        <div>
+          <p class="eyebrow">EXPLORE · TRY · ADAPT</p>
+          <h1 id="pageTitle">Teaching ideas,<br><span>ready to explore.</span></h1>
+          <p class="hero-description">Discover, explore and adapt interactive teaching resources for SPED learners.</p>
+          <p class="hero-detail">Explore a growing collection of interactive resources developed for teaching and learning in SPED. Try out the resources and download them to adapt for your students.</p>
+          <a class="hero-link" href="#gallery">Browse resources <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-card card-back"><span class="visual-emoji">✦</span><span>Teach with clarity</span><i></i><i></i></div>
+          <div class="visual-card card-front"><span class="visual-label">LEARNING RESOURCE</span><span class="visual-main">A B A B</span><div class="visual-pattern"><b>A</b><b>B</b><b>A</b><b>B</b></div><span class="visual-small">Explore interactive ideas</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="library-section container" id="gallery" aria-labelledby="galleryHeading">
+      <div class="library-heading">
+        <div><p class="section-eyebrow">THE RESOURCE COLLECTION</p><h2 id="galleryHeading">Explore the gallery</h2><p class="supporting">Practical starting points for classroom exploration and adaptation.</p></div>
+        <span id="collectionTotal" class="collection-total" aria-hidden="true"></span>
+      </div>
+      <form id="filterForm" class="filters" role="search" aria-label="Search and filter resources">
+        <div class="field field-search"><label for="searchInput">Search resources</label><div class="search-control"><span aria-hidden="true">⌕</span><input type="search" id="searchInput" placeholder="Try ‘money’, ‘AAC’ or ‘schedule’" autocomplete="off"></div></div>
+        <div class="field"><label for="domainFilter">Learning domain</label><select id="domainFilter"><option value="">All learning domains</option></select></div>
+        <div class="field"><label for="schoolFilter">Contributing school</label><select id="schoolFilter"><option value="">All contributors</option></select></div>
+        <button type="reset" id="resetFilters" class="reset-button">Clear filters</button>
+      </form>
+      <div class="gallery-bar"><p id="resultsCount" aria-hidden="true">Loading resources…</p><p class="gallery-note">Select <strong>Try It</strong> to explore a resource.</p></div>
+      <div id="srResults" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+      <div id="galleryGrid" class="gallery-grid" aria-busy="true"></div>
+      <div id="emptyState" class="empty-state" hidden><span aria-hidden="true">⌕</span><h3>No matching resources</h3><p>Try a different keyword, or clear your filters.</p><button type="button" class="button secondary" id="emptyReset">Clear filters</button></div>
+      <div id="loadError" class="empty-state error-state" hidden><span aria-hidden="true">!</span><h3>Unable to load the catalogue</h3><p id="loadErrorText">The resource list could not be loaded.</p><button type="button" class="button secondary" id="retryButton">Try again</button></div>
+    </section>
+
+    <section class="guidance-section" id="educatorInfo" aria-labelledby="guidanceTitle"><div class="container guidance-grid">
+      <div><p class="section-eyebrow">FOR EDUCATORS</p><h2 id="guidanceTitle">Explore first.<br>Adapt thoughtfully.</h2><p>These are demonstration materials, not ready-made interventions. Use professional judgement to match each activity to a learner’s communication, sensory, motor and instructional needs.</p></div>
+      <div class="guidance-points"><div><span class="point-index">01</span><div><h3>Try an activity</h3><p>Open a live preview or visit the independently hosted example.</p></div></div><div><span class="point-index">02</span><div><h3>Download the HTML</h3><p>Save an available standalone file, then review and modify it offline.</p></div></div><div><span class="point-index">03</span><div><h3>Review before use</h3><p>Check content, suitability, privacy, licensing, accessibility and functionality before classroom use.</p></div></div></div>
+    </div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><strong>SPED Interactive Showcase</strong><p>Public proof of concept. Fictional demonstration content; external examples are credited separately. Not affiliated with or endorsed by Singapore's Ministry of Education.</p><p><strong>Content governance:</strong> Resources should be reviewed for suitability, privacy, functionality, accessibility and appropriate licensing before inclusion in the public gallery. Do not submit student data or confidential materials.</p></div></footer>
+
+  <dialog id="resourceDialog" class="resource-dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+    <div class="dialog-shell">
+      <div class="dialog-header"><div><p id="modalKicker" class="modal-kicker">INTERACTIVE PREVIEW</p><h2 id="modalTitle">Resource preview</h2><p id="modalDescription" class="modal-description"></p></div><button type="button" id="closeModal" class="icon-button" aria-label="Close dialog">✕</button></div>
+      <div id="previewPane" class="preview-pane" hidden><p id="previewError" class="preview-error" role="alert" hidden></p><iframe id="previewFrame" title="Interactive resource preview" sandbox="allow-scripts" referrerpolicy="no-referrer" loading="eager"></iframe><div class="dialog-actions"><button type="button" class="button secondary" id="reloadPreview">↻ Reset resource</button><a id="openNewTab" class="button tertiary" href="#" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a></div></div>
+      <div id="aboutPane" class="about-pane" hidden></div>
+    </div>
+  </dialog>
+</body>
+</html>
