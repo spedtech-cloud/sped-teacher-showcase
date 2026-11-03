@@ -28,7 +28,8 @@
     "instructionalApproach": "Explicitly model the dollar-up rule using play money; guide a few examples; fade prompts after successful practice.",
     "assessmentCheck": "Present a new Singapore-dollar price and record whether the learner selects the correct whole-dollar amount independently or with prompts.",
     "transferTask": "Practise paying for a low-cost item at a simulated canteen or shop using physical money.",
-    "reviewStatus": "Prototype demonstration — not independently approved for classroom use"
+    "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
+    "spotlight": false
   },
   {
     "id": "communication-choice-board",
@@ -59,7 +60,8 @@
     "instructionalApproach": "A communication partner models the available words during a meaningful routine and acknowledges intentional communication, without requiring spoken repetition.",
     "assessmentCheck": "Record spontaneous or prompted choice-making across routines; do not treat a single successful button press as evidence of functional communication.",
     "transferTask": "Offer the same communicative opportunities during snack time, play or transitions with the learner’s everyday AAC system.",
-    "reviewStatus": "Prototype demonstration — not independently approved for classroom use"
+    "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
+    "spotlight": false
   },
   {
     "id": "five-star-token-board",
@@ -90,7 +92,8 @@
     "instructionalApproach": "If appropriate, collaboratively define a specific achievable behaviour or task goal and provide consistent, positive feedback. Consider learner preferences, agency and dignity.",
     "assessmentCheck": "Observe whether the agreed skill improves and generalises, rather than using tokens earned as the only indicator of progress.",
     "transferTask": "Use the same positively framed goal during a real routine, then review whether the visual board is still needed.",
-    "reviewStatus": "Prototype demonstration — not independently approved for classroom use"
+    "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
+    "spotlight": false
   },
   {
     "id": "my-visual-schedule",
@@ -121,7 +124,8 @@
     "instructionalApproach": "Model how to check what is next, practise in a predictable routine, and fade prompts based on observed learner readiness.",
     "assessmentCheck": "Observe whether the learner anticipates or transitions to the next step, noting the type and level of support needed.",
     "transferTask": "Use corresponding real-world visual cues during an actual classroom, home or community routine.",
-    "reviewStatus": "Prototype demonstration — not independently approved for classroom use"
+    "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
+    "spotlight": false
   },
   {
     "id": "workplace-sorting-practice",
@@ -152,7 +156,8 @@
     "instructionalApproach": "Demonstrate one sorting example in the actual work environment, provide guided practice, and fade cues while checking accuracy.",
     "assessmentCheck": "Observe sorting accuracy and independence with new items; record the prompting required and whether worksite expectations are met.",
     "transferTask": "Sort actual office, pantry and cleaning materials into correctly labelled locations in a supervised simulated workplace.",
-    "reviewStatus": "Prototype demonstration — not independently approved for classroom use"
+    "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
+    "spotlight": false
   },
   {
     "id": "colour-pattern-maker",
@@ -183,7 +188,8 @@
     "instructionalApproach": "Model a repeating unit using physical coloured objects, demonstrate one complete pattern, then fade to independent continuation.",
     "assessmentCheck": "Ask the learner to build a new repeating sequence with manipulatives and note independent accuracy or prompts.",
     "transferTask": "Make patterns using classroom objects, bead sequences or alternating items during a real-world sorting task.",
-    "reviewStatus": "Prototype demonstration — not independently approved for classroom use"
+    "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
+    "spotlight": false
   },
   {
     "id": "rhythm-and-movement-pads",
@@ -214,7 +220,8 @@
     "instructionalApproach": "Provide an adult-led movement demonstration, adapt to safe seated or standing participation, and encourage learner choice of pace.",
     "assessmentCheck": "Observe whether the learner performs or selects an adapted movement sequence with agreed levels of support.",
     "transferTask": "Use the selected sequence in a supervised physical movement session rather than counting taps alone as PE participation.",
-    "reviewStatus": "Prototype demonstration — not independently approved for classroom use"
+    "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
+    "spotlight": false
   },
   {
     "id": "visual-focus-timer",
@@ -245,7 +252,8 @@
     "instructionalApproach": "Explain what the end of the timer means, offer learner control when appropriate, and pair it with a now/next cue.",
     "assessmentCheck": "Observe whether the cue helps participation or transitions; stop or modify use if it creates distress.",
     "transferTask": "Introduce the same cue to a familiar real-world routine where the learner benefits from predictable transitions.",
-    "reviewStatus": "Prototype demonstration — not independently approved for classroom use"
+    "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
+    "spotlight": false
   },
   {
     "id": "digital-work-checklist",
@@ -280,7 +288,8 @@
     "reviewStatus": "Prototype demonstration — digital literacy / TLS alignment requires curriculum review",
     "additionalDomains": [
       "Digital Literacy"
-    ]
+    ],
+    "spotlight": true
   },
   {
     "id": "workplace-message-practice",
@@ -315,7 +324,8 @@
     "reviewStatus": "Prototype demonstration — digital literacy / TLS alignment requires curriculum review",
     "additionalDomains": [
       "Digital Literacy"
-    ]
+    ],
+    "spotlight": false
   },
   {
     "id": "safe-online-choices",
@@ -351,6 +361,7 @@
     "additionalDomains": [
       "Digital Literacy",
       "Healthy and Safe Relationships"
-    ]
+    ],
+    "spotlight": false
   }
 ]
