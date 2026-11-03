@@ -3,10 +3,10 @@
  */
 (() => {
   'use strict';
-  const DOMAINS = ['Communication and Language', 'Numeracy', 'Daily Living Skills', 'Social-Emotional Learning', 'Vocational Education', 'Arts', 'Physical Education'];
-  const ADDITIONAL_AREAS = ['Digital Literacy', 'Healthy and Safe Relationships'];
+  const SKILL_AREAS = ['Everyday Digital Skills', 'Learning with Technology', 'Digital Work Skills', 'Device Operation & Care', 'Checking Online Information', 'Online Communication', 'Online Safety'];
+  const CONTEXTS = ['Living', 'Learning', 'Working', 'Online Safety'];
   const SUPPORT_TYPE = 'Teaching Supports';
-  const ICONS = {'Communication and Language':'💬','Numeracy':'🧮','Daily Living Skills':'☀️','Social-Emotional Learning':'⭐','Vocational Education':'🗂️','Arts':'🎨','Physical Education':'🎵','Digital Literacy':'💻','Healthy and Safe Relationships':'🤝','Teaching Supports':'🧩'};
+  const ICONS = {'Everyday Digital Skills':'🔎','Learning with Technology':'📝','Digital Work Skills':'🗂️','Device Operation & Care':'⚙️','Checking Online Information':'✅','Online Communication':'💬','Online Safety':'🛡️'};
   const $ = selector => document.querySelector(selector);
   const state = {resources: [], lastOpener: null, previewPath: null, announceTimer: null};
   const grid = $('#galleryGrid');
@@ -111,21 +111,20 @@
     return actions;
   }
   function domainText(resource) {
-    return [optional(resource.domain, 'Learning domain not specified'),
-      ...(Array.isArray(resource.additionalDomains) ? resource.additionalDomains.filter(s => ADDITIONAL_AREAS.includes(s)) : [])].join(' · ');
+    return ['Digital Literacy', optional(resource.skillArea, 'General digital skill')].join(' · ');
   }
   function makeCard(resource) {
     const card = el('article', 'resource-card');
     card.setAttribute('aria-label', resource.title);
     const top = el('div', 'resource-top');
-    const icon = add(top, 'span', 'resource-icon', ICONS[resource.domain] || '◈');
+    const icon = add(top, 'span', 'resource-icon', ICONS[resource.skillArea] || '💻');
     icon.setAttribute('aria-hidden', 'true');
     add(top, 'span', 'resource-type', resourceType(resource));
     const body = el('div', 'resource-body');
     add(body, 'p', 'resource-domain', domainText(resource));
     add(body, 'h3', '', resource.title);
     add(body, 'p', 'resource-description', resource.description);
-    add(body, 'p', 'use-heading', resource.domain === SUPPORT_TYPE ? 'Support purpose' : 'Learning objective');
+    add(body, 'p', 'use-heading', 'Learning objective');
     add(body, 'p', 'resource-objective', optional(resource.learningObjective, 'Learning objective not provided; please check with the creator.'));
     add(body, 'p', 'use-heading', 'Suggested classroom use');
     add(body, 'p', 'suggested-use', optional(resource.suggestedUse, 'Suggested use not provided; review before classroom use.'));
@@ -168,16 +167,15 @@
   }
   function filteredResources() {
     const search = $('#searchInput').value.trim().toLocaleLowerCase();
-    const domain = $('#domainFilter').value;
-    const school = $('#schoolFilter').value;
+    const skillArea = $('#domainFilter').value;
+    const context = $('#schoolFilter').value;
     return state.resources.filter(r => {
-      if (domain && r.domain !== domain && !(Array.isArray(r.additionalDomains) && r.additionalDomains.includes(domain))) return false;
-      if (school && r.school !== school) return false;
+      if (skillArea && r.skillArea !== skillArea) return false;
+      if (context && r.context !== context) return false;
       if (!search) return true;
-      const searchable = [r.title, r.description, r.learningObjective, r.suggestedUse, r.domain, r.school,
-        r.resourceType, r.curriculumContext, ...(Array.isArray(r.additionalDomains) ? r.additionalDomains : []),
-        ...(Array.isArray(r.tags) ? r.tags : [])];
-      return searchable.some(s => typeof s === 'string' && s.toLocaleLowerCase().includes(search));
+      const fields = [r.title, r.description, r.learningObjective, r.suggestedUse, r.skillArea, r.context,
+        r.resourceType, ...(Array.isArray(r.tags) ? r.tags : [])];
+      return fields.some(s => typeof s === 'string' && s.toLocaleLowerCase().includes(search));
     });
   }
   function announce(message, delayed = false) {
@@ -194,18 +192,12 @@
     $('#emptyState').hidden = filtered.length !== 0;
   }
   function populateFilters() {
-    const domainSelect = $('#domainFilter');
-    const schoolSelect = $('#schoolFilter');
-    domainSelect.replaceChildren(new Option('All domains and resource types', ''));
-    const curriculum = el('optgroup'); curriculum.label = 'Seven SPED learning domains';
-    DOMAINS.forEach(d => curriculum.append(new Option(d,d)));
-    const additional = el('optgroup'); additional.label = 'Additional learning areas';
-    ADDITIONAL_AREAS.forEach(d => additional.append(new Option(d,d)));
-    const types = el('optgroup'); types.label = 'Resource type';
-    types.append(new Option(SUPPORT_TYPE,SUPPORT_TYPE));
-    domainSelect.append(curriculum,additional,types);
-    schoolSelect.replaceChildren(new Option('All contributors', ''));
-    [...new Set(state.resources.map(r => optional(r.school, 'Not specified')))].sort().forEach(s => schoolSelect.append(new Option(s,s)));
+    const skillSelect = $('#domainFilter');
+    const contextSelect = $('#schoolFilter');
+    skillSelect.replaceChildren(new Option('All digital skill areas', ''));
+    SKILL_AREAS.filter(d => state.resources.some(r => r.skillArea === d)).forEach(d => skillSelect.append(new Option(d,d)));
+    contextSelect.replaceChildren(new Option('All contexts', ''));
+    CONTEXTS.filter(d => state.resources.some(r => r.context === d)).forEach(d => contextSelect.append(new Option(d,d)));
   }
   function resetFilters() {
     $('#searchInput').value = '';
@@ -324,9 +316,11 @@
     const host = $('#aboutPane');host.replaceChildren();host.hidden=false;
     add(host,'p','badge-line',resourceType(resource));
     detailField(host,'Description',resource.description,'Description not provided.');
-    detailField(host,'Learning domain',domainText(resource),'Learning domain not specified.');
+    detailField(host,'Learning area', 'Digital Literacy', 'Digital literacy.');
+    detailField(host,'Digital skill area',resource.skillArea,'Not specified.');
+    detailField(host,'Teaching context',resource.context,'Not specified.');
     detailField(host,'Resource type',resourceType(resource),'Resource type not specified.');
-    detailField(host,resource.domain === SUPPORT_TYPE ? 'Support purpose' : 'Learning objective',resource.learningObjective,'Learning objective not provided; confirm before use.');
+    detailField(host,'Learning objective',resource.learningObjective,'Learning objective not provided; confirm before use.');
     detailField(host,'Suggested classroom use',resource.suggestedUse,'Suggested use not provided; review before classroom use.');
     add(host,'h3','','Possible adaptations');
     const list = el('ul');
