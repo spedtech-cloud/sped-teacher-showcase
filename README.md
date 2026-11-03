@@ -16,7 +16,7 @@ Each activity must be reviewed for learner suitability, learning purpose, rights
 
 - `index.html` — homepage and accessible gallery layout.
 - `resources.json` — catalogue of approved public resource descriptions and paths.
-- `assets/app.js` — search, filters, Spotlight and sandboxed previews.
+- `assets/app.js` — search, filters, Spotlight and full-page activity links.
 - `assets/styles.css` — responsive layout including mobile controls.
 - `assets/spotlight.css` — featured resource styling.
 - `resources/*.html` — independent interactive learning resources (15 files).
@@ -37,8 +37,8 @@ For this version, upload and replace `index.html`, `resources.json`, `assets/app
 
 ## Accessibility and privacy
 
-Targets WCAG 2.1 AA design principles (keyboard operation, accessible labels, focus, reduced motion, responsive text, screen-reader announcements and isolated HTML previews). No formal WCAG or Oobee conformance claim has been made. Each downloaded HTML activity needs its own audit.
+Targets WCAG 2.1 AA design principles (keyboard operation, accessible labels, focus, reduced motion, responsive text, screen-reader announcements and full-page teaching activities). No formal WCAG or Oobee conformance claim has been made. Each downloaded HTML activity needs its own audit.
 
-The showcase uses no accounts, cookies, visitor analytics or third-party scripts in the gallery. Local activities run in `iframe sandbox="allow-scripts"`. The website is public: do not include real student personal information, confidential educational materials, private file URLs, tokens or restricted curriculum files.
+The showcase uses no accounts, cookies, visitor analytics or third-party scripts in the gallery. Local activities open as standalone pages in new tabs with `rel="noopener noreferrer"`; unlike the previous sandboxed previews, they run with normal same-origin browser permissions. Review HTML and JavaScript carefully before publishing any contributed activity. The website is public: do not include real student personal information, confidential educational materials, private file URLs, tokens or restricted curriculum files.
 
 The contribution/removal contact address is currently unconfigured and shown as a disabled placeholder.

@@ -64,7 +64,7 @@
           <button type="reset" id="resetFilters" class="reset-button">Clear filters</button>
         </div>
       </form>
-      <div class="gallery-bar"><p id="resultsCount" aria-hidden="true">Loading resources…</p><p class="gallery-note">Select <strong>Try It</strong> to explore a resource.</p></div>
+      <div class="gallery-bar"><p id="resultsCount" aria-hidden="true">Loading resources…</p><p class="gallery-note"><strong>Try It</strong> opens the complete activity in a new tab.</p></div>
       <div id="srResults" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
       <div id="galleryGrid" class="gallery-grid" aria-busy="true"></div>
       <div id="emptyState" class="empty-state" hidden><span aria-hidden="true">⌕</span><h3>No matching resources</h3><p>Try a different keyword, or clear your filters.</p><button type="button" class="button secondary" id="emptyReset">Clear filters</button></div>
@@ -73,7 +73,7 @@
 
     <section class="guidance-section" id="educatorInfo" aria-labelledby="guidanceTitle"><div class="container guidance-grid">
       <div><p class="section-eyebrow">FOR EDUCATORS</p><h2 id="guidanceTitle">Explore first.<br>Adapt thoughtfully.</h2><p>These are illustrative teaching resources, not verified curriculum outcome mappings or ready-made interventions. Our POC spotlights Digital Literacy, but also includes resources across SPED learning domains. Pair onscreen practice with authentic contexts, and adapt the prompting, response options and difficulty for individual learners.</p></div>
-      <div class="guidance-points"><div><span class="point-index">01</span><div><h3>Try an activity</h3><p>Open an isolated preview of a locally hosted teaching activity.</p></div></div><div><span class="point-index">02</span><div><h3>Download the HTML</h3><p>Save an available standalone file, then review and modify it offline.</p></div></div><div><span class="point-index">03</span><div><h3>Review before use</h3><p>Check content, suitability, privacy, licensing, accessibility and functionality before classroom use.</p></div></div></div>
+      <div class="guidance-points"><div><span class="point-index">01</span><div><h3>Try an activity</h3><p>Open the full-page teaching activity in a new tab, then return to the gallery.</p></div></div><div><span class="point-index">02</span><div><h3>Download the HTML</h3><p>Save an available standalone file, then review and modify it offline.</p></div></div><div><span class="point-index">03</span><div><h3>Review before use</h3><p>Check content, suitability, privacy, licensing, accessibility and functionality before classroom use.</p></div></div></div>
     </div></section>
   </main>
 
@@ -91,8 +91,7 @@
 
   <dialog id="resourceDialog" class="resource-dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
     <div class="dialog-shell">
-      <div class="dialog-header"><div><p id="modalKicker" class="modal-kicker">INTERACTIVE PREVIEW</p><h2 id="modalTitle">Resource preview</h2><p id="modalDescription" class="modal-description"></p></div><button type="button" id="closeModal" class="icon-button" aria-label="Close dialog">✕</button></div>
-      <div id="previewPane" class="preview-pane" hidden><p id="previewError" class="preview-error" role="alert" hidden></p><iframe id="previewFrame" title="Interactive resource preview" sandbox="allow-scripts" referrerpolicy="no-referrer" loading="eager"></iframe><div class="dialog-actions"><button type="button" class="button secondary" id="reloadPreview">↻ Reset resource</button><a id="openNewTab" class="button tertiary" href="#" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a></div></div>
+      <div class="dialog-header"><div><p class="modal-kicker">RESOURCE DETAILS</p><h2 id="modalTitle">About this resource</h2><p id="modalDescription" class="modal-description"></p></div><button type="button" id="closeModal" class="icon-button" aria-label="Close resource details">✕</button></div>
       <div id="aboutPane" class="about-pane" hidden></div>
       <p id="modalStatus" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
     </div>
