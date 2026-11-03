@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#002b49">
-  <meta name="description" content="Explore standalone, interactive digital literacy teaching demonstrations for Singapore SPED educators.">
-  <title>Digital Literacy | SPED Interactive Showcase</title>
+  <meta name="description" content="Discover interactive SPED teaching resources across learning domains, with a Digital Literacy focus.">
+  <title>SPED Interactive Showcase — Digital Literacy Focus</title>
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="stylesheet" href="assets/spotlight.css">
   <script src="assets/app.js" defer></script>
@@ -26,9 +26,9 @@
       <div class="container hero-layout">
         <div>
           <p class="eyebrow">EXPLORE · TRY · ADAPT</p>
-          <h1 id="pageTitle">Digital literacy,<br><span>ready to practise.</span></h1>
-          <p class="hero-description">Discover, try and adapt interactive digital literacy teaching resources for SPED learners.</p>
-          <p class="hero-detail">A focused set of practical simulations for everyday technology use, digital learning, workplace tasks and online safety. Try each activity and download the standalone HTML to adapt for learners.</p>
+          <h1 id="pageTitle">Teaching ideas,<br><span>ready to explore.</span></h1>
+          <p class="hero-description">Discover, try and adapt interactive SPED resources, with Digital Literacy in the spotlight.</p>
+          <p class="hero-detail">Start with practical Digital Literacy teaching ideas, then explore resources across other learning domains. Every activity can be tried in-browser and downloaded for review and adaptation.</p>
           <a class="hero-link" href="#gallery">Browse resources <span aria-hidden="true">↓</span></a>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -39,20 +39,30 @@
     </section>
 
     <section id="spotlight" class="spotlight-section container" aria-labelledby="spotlightHeading" hidden>
-      <div class="spotlight-intro"><p class="section-eyebrow">SELECTED BY SPEDTECH</p><h2 id="spotlightHeading">Resource Spotlight</h2><p>A selected digital-literacy teaching idea for exploration. Review and adapt it to your learners.</p></div>
+      <div class="spotlight-intro"><p class="section-eyebrow">SELECTED BY SPEDTECH</p><h2 id="spotlightHeading">Resource Spotlight</h2><p>A selected Digital Literacy teaching idea. Explore other learning domains in the gallery below.</p></div>
       <div id="spotlightContent"></div>
     </section>
 
     <section class="library-section container" id="gallery" aria-labelledby="galleryHeading">
       <div class="library-heading">
-        <div><p class="section-eyebrow">THE RESOURCE COLLECTION</p><h2 id="galleryHeading">Explore digital literacy resources</h2><p class="supporting">Explore a small collection focused only on digital literacy. Filter by skill area and teaching context; all activities use fictional examples and need educator review before classroom use.</p></div>
+        <div><p class="section-eyebrow">THE RESOURCE COLLECTION</p><h2 id="galleryHeading">Explore teaching resources</h2><p class="supporting">Digital Literacy is our current focus, alongside other SPED learning domains and Teaching Supports. All activities use demonstration content and require educator review.</p></div>
         <span id="collectionTotal" class="collection-total" aria-hidden="true"></span>
       </div>
+      <div class="focus-switcher" role="group" aria-label="Resource focus">
+        <button id="showAll" class="focus-choice" type="button" aria-pressed="true">All resources</button>
+        <button id="showDL" class="focus-choice" type="button" aria-pressed="false">Digital Literacy focus</button>
+      </div>
       <form id="filterForm" class="filters" role="search" aria-label="Search and filter resources">
-        <div class="field field-search"><label for="searchInput">Search resources</label><div class="search-control"><span aria-hidden="true">⌕</span><input type="search" id="searchInput" placeholder="Try ‘devices’, ‘search’ or ‘safety’" autocomplete="off"></div></div>
-        <div class="field"><label for="domainFilter">Digital skill area</label><select id="domainFilter"><option value="">All digital skills</option></select></div>
-        <div class="field"><label for="schoolFilter">Teaching context</label><select id="schoolFilter"><option value="">All contexts</option></select></div>
-        <button type="reset" id="resetFilters" class="reset-button">Clear filters</button>
+        <div class="field field-search"><label for="searchInput">Search resources</label><div class="search-control"><span aria-hidden="true">⌕</span><input type="search" id="searchInput" placeholder="Try ‘digital literacy’, ‘AAC’ or ‘numeracy’" autocomplete="off"></div></div>
+        <div class="mobile-filter-bar">
+          <button type="button" id="mobileFilterToggle" class="mobile-filter-toggle" aria-controls="advancedFilters" aria-expanded="false">Show filters</button>
+          <button type="reset" class="mobile-clear-button">Clear all</button>
+        </div>
+        <div id="advancedFilters" class="advanced-filters">
+          <div class="field"><label for="domainFilter">Learning domain / focus area</label><select id="domainFilter"><option value="">All domains and resource types</option></select></div>
+          <div class="field"><label for="schoolFilter">Contributing school</label><select id="schoolFilter"><option value="">All contributors</option></select></div>
+          <button type="reset" id="resetFilters" class="reset-button">Clear filters</button>
+        </div>
       </form>
       <div class="gallery-bar"><p id="resultsCount" aria-hidden="true">Loading resources…</p><p class="gallery-note">Select <strong>Try It</strong> to explore a resource.</p></div>
       <div id="srResults" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
@@ -62,7 +72,7 @@
     </section>
 
     <section class="guidance-section" id="educatorInfo" aria-labelledby="guidanceTitle"><div class="container guidance-grid">
-      <div><p class="section-eyebrow">FOR EDUCATORS</p><h2 id="guidanceTitle">Explore first.<br>Adapt thoughtfully.</h2><p>These are original, illustrative digital-literacy practice activities, not verified curriculum outcome mappings or ready-made interventions. Pair the simulations with authentic devices, functional goals and assessment of independence. Adjust the instructions, prompting and response options for each learner.</p></div>
+      <div><p class="section-eyebrow">FOR EDUCATORS</p><h2 id="guidanceTitle">Explore first.<br>Adapt thoughtfully.</h2><p>These are illustrative teaching resources, not verified curriculum outcome mappings or ready-made interventions. Our POC spotlights Digital Literacy, but also includes resources across SPED learning domains. Pair onscreen practice with authentic contexts, and adapt the prompting, response options and difficulty for individual learners.</p></div>
       <div class="guidance-points"><div><span class="point-index">01</span><div><h3>Try an activity</h3><p>Open an isolated preview of a locally hosted teaching activity.</p></div></div><div><span class="point-index">02</span><div><h3>Download the HTML</h3><p>Save an available standalone file, then review and modify it offline.</p></div></div><div><span class="point-index">03</span><div><h3>Review before use</h3><p>Check content, suitability, privacy, licensing, accessibility and functionality before classroom use.</p></div></div></div>
     </div></section>
   </main>
@@ -75,7 +85,7 @@
         <button type="button" disabled title="Contact address to be confirmed">Request Removal — coming soon</button>
       </div>
       <p class="contact-status">Both options will be enabled once an approved contact email is confirmed. The website does not currently collect submissions or requests.</p>
-      <p>Public proof of concept. Fictional digital-literacy demonstrations; only locally hosted resources are listed. Not affiliated with or endorsed by Singapore's Ministry of Education.</p>
+      <p>Public proof of concept. Fictional demonstration resources; only locally hosted resources are currently listed. Not affiliated with or endorsed by Singapore's Ministry of Education.</p>
       <p><strong>Content governance:</strong> Resources should be reviewed for learning purpose, suitability, privacy, functionality, accessibility and licensing before inclusion in the public gallery. See the contributor review checklist in the repository. Do not submit student data or confidential materials.</p>
     </div></footer>
 
