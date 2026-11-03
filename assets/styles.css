@@ -8,3 +8,28 @@
 body.high-contrast{--navy:#00182b;--ink:#001523;--muted:#213c4f;--crimson:#92001e;--cream:#fff;--line:#5d7182;--focus:#ff8a00;--shadow:none}
 body.high-contrast .site-header,body.high-contrast .filters,body.high-contrast .resource-card{border-width:2px}
 body.high-contrast .tag{background:#e4ecf3;color:#001523}
+
+/* V1.1: clearer purpose-driven cards, readable detail sections, accessible controls. */
+.resource-type{max-width:72%;line-height:1.35;text-align:right;white-space:normal}
+.resource-objective{font-size:13px;line-height:1.6;color:#344e5c;margin:0 0 14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.resource-description{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:14px}
+.suggested-use{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:0}
+.resource-card .use-heading{margin-bottom:5px}
+.resource-card .resource-body{padding-bottom:20px}
+.resource-tags{margin-top:14px}
+.about-button{min-height:44px;display:flex;align-items:center}
+.button,.icon-button{min-height:44px}
+.primary-actions a,.primary-actions button{min-width:0}
+.download-unavailable{color:#4b6473;font-size:12px;line-height:1.5;align-self:center}
+.primary-actions.single-action{display:flex;flex-direction:column;align-items:stretch}
+.resource-dialog{overflow-y:auto}
+.resource-dialog .source-link{display:inline-block;margin:-10px 0 20px;color:#045b9f;overflow-wrap:anywhere}
+.about-teaching{border-top:1px solid var(--line);padding-top:18px}
+.about-pane h3{line-height:1.4}
+.about-source .download-unavailable{font-size:13px;line-height:1.6}
+.preview-pane .preview-error[hidden]{display:none!important}
+@media(max-width:670px){.resource-type{max-width:75%}.resource-top{gap:12px}.resource-dialog{max-height:93dvh}.dialog-actions .button{flex:1 1 150px}}
+
+.utility-button{min-height:44px}
+.spotlight-actions .button{min-height:44px}
+@media(max-width:480px){.spotlight-actions .button{width:100%}}
