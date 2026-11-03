@@ -1,8 +1,10 @@
 /* Static, dependency-free showcase. User-contributed metadata is always displayed as text. */
 (() => {
   'use strict';
-  const DOMAINS = ['Daily Living Skills', 'Numeracy', 'Communication & Language', 'Social Emotional Learning', 'Vocational Education', 'Visual Arts', 'Physical Education', 'Others'];
-  const ICONS = {'Daily Living Skills':'☀️','Numeracy':'🧮','Communication & Language':'💬','Social Emotional Learning':'⭐','Vocational Education':'🗂️','Visual Arts':'🎨','Physical Education':'🎵','Others':'⏱️'};
+  const DOMAINS = ['Communication and Language', 'Numeracy', 'Daily Living Skills', 'Social-Emotional Learning', 'Vocational Education', 'Arts', 'Physical Education'];
+  const ADDITIONAL_AREAS = ['Digital Literacy', 'Healthy and Safe Relationships'];
+  const SUPPORT_TYPE = 'Teaching Supports';
+  const ICONS = {'Communication and Language':'💬','Numeracy':'🧮','Daily Living Skills':'☀️','Social-Emotional Learning':'⭐','Vocational Education':'🗂️','Arts':'🎨','Physical Education':'🎵','Digital Literacy':'💻','Healthy and Safe Relationships':'🤝','Teaching Supports':'🧩'};
   const $ = selector => document.querySelector(selector);
   const state = { resources: [], lastOpener: null, previewPath: null };
   const grid = $('#galleryGrid');
@@ -26,7 +28,7 @@
       && typeof item.title === 'string' && item.title.length > 0
       && typeof item.description === 'string' && typeof item.domain === 'string'
       && typeof item.school === 'string'
-      && (item.hostingType === 'local' ? localPath(item.previewUrl) && localPath(item.downloadUrl) : item.hostingType === 'external' && secureUrl(item.previewUrl));
+      && item.hostingType === 'local' && localPath(item.previewUrl) && localPath(item.downloadUrl);
   }
   function addText(parent, tag, className, content) { const el = element(tag, className, content); parent.append(el); return el; }
   function button(className, label, onClick) { const el = element('button', className, label); el.type='button'; el.addEventListener('click', onClick); return el; }
@@ -40,7 +42,7 @@
     icon.setAttribute('aria-hidden', 'true');
     addText(top, 'span', 'resource-type', resource.hostingType === 'local' ? 'Interactive HTML' : 'External website');
     const body = element('div', 'resource-body');
-    addText(body, 'p', 'resource-domain', resource.domain);
+    addText(body, 'p', 'resource-domain', [resource.domain, ...(Array.isArray(resource.additionalDomains) ? resource.additionalDomains.filter(v => ADDITIONAL_AREAS.includes(v)) : [])].join(' · '));
     addText(body, 'h3', '', resource.title);
     addText(body, 'p', 'resource-description', resource.description);
     addText(body, 'p', 'use-heading', 'Suggested classroom use');
@@ -71,15 +73,37 @@
     return card;
   }
 
+  function renderSpotlight() {
+    const section = $('#spotlight');
+    const host = $('#spotlightContent');
+    if (!section || !host) return;
+    const resource = state.resources.find(r => r.spotlight === true && r.hostingType === 'local');
+    host.replaceChildren();
+    section.hidden = !resource;
+    if (!resource) return;
+    const card = element('article', 'spotlight-card');
+    addText(card, 'p', 'spotlight-eyebrow', resource.domain);
+    addText(card, 'h3', '', resource.title);
+    addText(card, 'p', '', resource.description);
+    addText(card, 'p', 'spotlight-label', 'Suggested classroom use');
+    addText(card, 'p', '', optional(resource.suggestedUse, 'Review before classroom use.'));
+    const actions = element('div', 'spotlight-actions');
+    actions.append(button('button primary', 'Try It', ev => openPreview(resource, ev.currentTarget)));
+    actions.append(button('button secondary', 'Download HTML', ev => downloadResource(resource, ev.currentTarget)));
+    actions.append(button('button tertiary', 'About this resource', ev => openAbout(resource, ev.currentTarget)));
+    card.append(actions);
+    host.append(card);
+  }
+
   function results() {
     const search = $('#searchInput').value.trim().toLocaleLowerCase();
     const domain = $('#domainFilter').value;
     const school = $('#schoolFilter').value;
     const filtered = state.resources.filter(r => {
-      if (domain && r.domain !== domain) return false;
+      if (domain && r.domain !== domain && !(Array.isArray(r.additionalDomains) && r.additionalDomains.includes(domain))) return false;
       if (school && r.school !== school) return false;
       if (!search) return true;
-      const fields = [r.title,r.description,r.domain,r.school,r.suggestedUse,...(Array.isArray(r.tags) ? r.tags : [])];
+      const fields = [r.title,r.description,r.domain,r.school,r.suggestedUse,r.curriculumContext,r.instructionalApproach,r.transferTask,...(Array.isArray(r.additionalDomains) ? r.additionalDomains : []),...(Array.isArray(r.tags) ? r.tags : [])];
       return fields.some(v => typeof v === 'string' && v.toLocaleLowerCase().includes(search));
     });
     grid.replaceChildren(...filtered.map(makeCard));
@@ -91,8 +115,17 @@
   function populateFilters() {
     const domainSelect = $('#domainFilter');
     const schoolSelect = $('#schoolFilter');
-    domainSelect.replaceChildren(new Option('All learning domains', ''));
-    DOMAINS.forEach(d => domainSelect.append(new Option(d, d)));
+    domainSelect.replaceChildren(new Option('All domains and resource types', ''));
+    const curriculumGroup = document.createElement('optgroup');
+    curriculumGroup.label = 'Seven SPED learning domains';
+    DOMAINS.forEach(d => curriculumGroup.append(new Option(d, d)));
+    const additionalGroup = document.createElement('optgroup');
+    additionalGroup.label = 'Additional learning areas (not separate MOE TLSs)';
+    ADDITIONAL_AREAS.forEach(d => additionalGroup.append(new Option(d, d)));
+    const supportGroup = document.createElement('optgroup');
+    supportGroup.label = 'Resource types (not learning domains)';
+    supportGroup.append(new Option(SUPPORT_TYPE, SUPPORT_TYPE));
+    domainSelect.append(curriculumGroup, additionalGroup, supportGroup);
     schoolSelect.replaceChildren(new Option('All contributors', ''));
     [...new Set(state.resources.map(r => r.school))].sort().forEach(s => schoolSelect.append(new Option(s,s)));
   }
@@ -114,6 +147,7 @@
       const filtered = data.filter(r => { if (!usableResource(r) || unique.has(r.id)) return false; unique.add(r.id); return true; });
       if (!filtered.length) throw new Error('No valid resource entries were found.');
       state.resources = filtered;
+      renderSpotlight();
       populateFilters();
       $('#collectionTotal').textContent = `${filtered.length} resources`;
       results();
@@ -121,6 +155,7 @@
     } catch (error) {
       console.error('Catalogue unavailable:',error);
       state.resources=[]; grid.replaceChildren();
+      renderSpotlight();
       $('#resultsCount').textContent='0 resources shown';
       $('#collectionTotal').textContent='';
       $('#loadError').hidden=false;
@@ -201,8 +236,14 @@
     const container=$('#aboutPane');container.replaceChildren();container.hidden=false;
     addText(container,'p','badge-line',resource.hostingType === 'local' ? 'Locally hosted, standalone HTML' : 'External site · Opens separately');
     aboutField(container,'Description',resource.description);
-    aboutField(container,'Learning objective',resource.learningObjective);
+    aboutField(container,'Review status',resource.reviewStatus);
+    aboutField(container,'Curriculum relevance (illustrative)',resource.curriculumContext);
+    if (Array.isArray(resource.additionalDomains) && resource.additionalDomains.length) aboutField(container,'Related learning areas (provisional)',resource.additionalDomains.join(', '));
+    aboutField(container,'Learning objective / support purpose',resource.learningObjective);
     aboutField(container,'Suggested classroom use',resource.suggestedUse);
+    aboutField(container,'Suggested teaching approach',resource.instructionalApproach);
+    aboutField(container,'What to observe or assess',resource.assessmentCheck);
+    aboutField(container,'Transfer beyond the screen',resource.transferTask);
     addText(container,'h3','', 'Possible adaptations');
     const list=element('ul');
     const adaptations = Array.isArray(resource.adaptations) ? resource.adaptations : [];
