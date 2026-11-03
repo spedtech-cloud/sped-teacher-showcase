@@ -8,11 +8,9 @@
   const SUPPORT_TYPE = 'Teaching Supports';
   const ICONS = {'Communication and Language':'💬','Numeracy':'🧮','Daily Living Skills':'☀️','Social-Emotional Learning':'⭐','Vocational Education':'🗂️','Arts':'🎨','Physical Education':'🎵','Digital Literacy':'💻','Healthy and Safe Relationships':'🤝','Teaching Supports':'🧩'};
   const $ = selector => document.querySelector(selector);
-  const state = {resources: [], lastOpener: null, previewPath: null, announceTimer: null, focus: 'all'};
+  const state = {resources: [], lastOpener: null, announceTimer: null, focus: 'all'};
   const grid = $('#galleryGrid');
   const dialog = $('#resourceDialog');
-  const previewFrame = $('#previewFrame');
-  const previewError = $('#previewError');
   const modalStatus = $('#modalStatus');
 
   function el(tag, className, content) {
@@ -95,9 +93,14 @@
       link.setAttribute('aria-label', 'Try ' + resource.title + ' on external website (opens a new tab)');
       return link;
     }
-    const tryButton = button('button primary', 'Try It', event => openPreview(resource, event.currentTarget));
-    tryButton.setAttribute('aria-label', 'Try ' + resource.title + ' in an interactive preview');
-    return tryButton;
+    // Standalone HTML uses the full browser viewport, not a nested scrolling iframe.
+    // Only vetted local resources from resources.json reach this link.
+    const link = el('a', 'button primary', 'Try It ↗');
+    link.href = resource.previewUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.setAttribute('aria-label', 'Try ' + resource.title + ' in a new tab');
+    return link;
   }
   function makeActions(resource, className = 'primary-actions') {
     const actions = el('div', className);
@@ -289,43 +292,14 @@
     } catch {return false;}
   }
   function setModalState(message) {if (modalStatus) modalStatus.textContent = message;}
-  function setupDialog(resource, kicker, opener) {
+  function setupDialog(resource, opener) {
     state.lastOpener=opener;
-    $('#modalKicker').textContent=kicker;
     $('#modalTitle').textContent=resource.title;
     $('#modalDescription').textContent = domainText(resource) + ' · ' + resourceType(resource);
-    $('#previewPane').hidden=true; $('#aboutPane').hidden=true;
-    previewFrame.removeAttribute('src'); previewFrame.hidden=true;
-    previewError.hidden=true; previewError.textContent='';
-    state.previewPath=null;
-    $('#openNewTab').removeAttribute('href');
-    $('#reloadPreview').disabled=true;
+    $('#aboutPane').hidden=true;
     dialog.showModal();
     $('#closeModal').focus();
-    setModalState(kicker === 'INTERACTIVE PREVIEW' ? 'Preview dialog opened for ' + resource.title : 'Resource details opened for ' + resource.title);
-  }
-  async function openPreview(resource, opener) {
-    setupDialog(resource, 'INTERACTIVE PREVIEW', opener);
-    $('#previewPane').hidden=false;
-    const loading = previewError;
-    loading.textContent='Checking resource availability…'; loading.hidden=false;
-    const path = resource.previewUrl;
-    const found = await verifyLocal(path);
-    if (!dialog.open || state.lastOpener !== opener) return;
-    $('#openNewTab').href=path;
-    $('#openNewTab').setAttribute('aria-label','Open ' + resource.title + ' in a new tab');
-    if (!found) {
-      loading.textContent='The HTML preview is unavailable. Check the resource file and path; you can try opening it in a new tab.';
-      setModalState('Preview not available for ' + resource.title);
-      return;
-    }
-    loading.hidden=true;
-    state.previewPath=path;
-    $('#reloadPreview').disabled=false;
-    previewFrame.title = resource.title + ' — sandboxed interactive preview';
-    previewFrame.src=path;
-    previewFrame.hidden=false;
-    setModalState('Preview ready for ' + resource.title);
+    setModalState('Resource details opened for ' + resource.title);
   }
   async function downloadResource(resource, control) {
     if (!hasDownload(resource) || isExternal(resource)) return;
@@ -355,7 +329,7 @@
     link.setAttribute('aria-label', label + ' (opens in a new tab)');
   }
   function openAbout(resource, opener) {
-    setupDialog(resource,'ABOUT THIS RESOURCE',opener);
+    setupDialog(resource,opener);
     const host = $('#aboutPane');host.replaceChildren();host.hidden=false;
     add(host,'p','badge-line',resourceType(resource));
     detailField(host,'Description',resource.description,'Description not provided.');
@@ -403,23 +377,17 @@
   $('#emptyReset').addEventListener('click',resetFilters);
   $('#retryButton').addEventListener('click',loadResources);
   $('#closeModal').addEventListener('click',closeDialog);
-  $('#reloadPreview').addEventListener('click',()=>{
-    if (!state.previewPath)return;
-    previewFrame.src='about:blank'; previewFrame.src=state.previewPath;
-    setModalState('Preview reset');
-  });
   dialog.addEventListener('close',()=>{
-    previewFrame.removeAttribute('src');
     setModalState('Dialog closed');
     const opener=state.lastOpener;
-    state.lastOpener=null;state.previewPath=null;
+    state.lastOpener=null;
     if (opener && opener.isConnected) opener.focus();
   });
   dialog.addEventListener('click',event=>{if(event.target===dialog)closeDialog();});
   dialog.addEventListener('keydown',event=>{
     if (event.key==='Escape') {event.preventDefault();closeDialog();return;}
     if (event.key!=='Tab') return;
-    const focusable=[...dialog.querySelectorAll('a[href],button:not([disabled]),iframe')]
+    const focusable=[...dialog.querySelectorAll('a[href],button:not([disabled])')]
       .filter(node=> !node.hidden && !node.closest('[hidden]') && node.getClientRects().length);
     if (!focusable.length) return;
     const first=focusable[0], last=focusable[focusable.length-1];
