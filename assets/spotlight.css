@@ -11,6 +11,5 @@
 .spotlight-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:1rem}
 .spotlight-actions button{min-height:44px}
 .spotlight-section button:focus-visible{outline:3px solid #b45309;outline-offset:4px}
-body.high-contrast .spotlight-card{border-color:currentColor;box-shadow:none}
 @media (max-width:480px){.spotlight-actions{flex-direction:column}.spotlight-actions button{width:100%}}
 @media (prefers-reduced-motion:reduce){.spotlight-section *, .spotlight-section *::before, .spotlight-section *::after{animation:none!important;transition:none!important}}

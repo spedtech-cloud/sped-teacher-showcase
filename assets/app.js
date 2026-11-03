@@ -82,7 +82,9 @@
       link.setAttribute('aria-label', 'Download source files for ' + resource.title + ' (opens a new tab)');
       return link;
     }
-    return button('button secondary', '↓ ' + downloadLabel(resource), event => downloadResource(resource, event.currentTarget));
+    const downloadButton = button('button secondary', '↓ ' + downloadLabel(resource), event => downloadResource(resource, event.currentTarget));
+    downloadButton.setAttribute('aria-label', downloadLabel(resource) + ' for ' + resource.title);
+    return downloadButton;
   }
   function tryAction(resource) {
     if (isExternal(resource)) {
@@ -93,7 +95,9 @@
       link.setAttribute('aria-label', 'Try ' + resource.title + ' on external website (opens a new tab)');
       return link;
     }
-    return button('button primary', 'Try It', event => openPreview(resource, event.currentTarget));
+    const tryButton = button('button primary', 'Try It', event => openPreview(resource, event.currentTarget));
+    tryButton.setAttribute('aria-label', 'Try ' + resource.title + ' in an interactive preview');
+    return tryButton;
   }
   function makeActions(resource, className = 'primary-actions') {
     const actions = el('div', className);
@@ -133,7 +137,9 @@
     const footer = el('div', 'resource-footer');
     add(footer, 'p', 'contributor', 'Contributor: ' + optional(resource.school, 'Not specified'));
     footer.append(makeActions(resource));
-    footer.append(button('about-button', 'About this resource →', event => openAbout(resource, event.currentTarget)));
+    const aboutButton = button('about-button', 'About this resource →', event => openAbout(resource, event.currentTarget));
+    aboutButton.setAttribute('aria-label', 'About ' + resource.title);
+    footer.append(aboutButton);
     card.append(top, body, footer);
     return card;
   }
@@ -154,7 +160,9 @@
     add(card, 'p', 'spotlight-label', 'Suggested classroom use');
     add(card, 'p', '', optional(resource.suggestedUse, 'Review before classroom use.'));
     const actions = makeActions(resource, 'spotlight-actions');
-    actions.append(button('button tertiary', 'About this resource', event => openAbout(resource, event.currentTarget)));
+    const aboutButton = button('button tertiary', 'About this resource', event => openAbout(resource, event.currentTarget));
+    aboutButton.setAttribute('aria-label', 'About featured resource: ' + resource.title);
+    actions.append(aboutButton);
     card.append(actions);
     host.append(card);
   }
@@ -378,14 +386,6 @@
     const first=focusable[0], last=focusable[focusable.length-1];
     if (event.shiftKey && document.activeElement===first){event.preventDefault();last.focus();}
     else if (!event.shiftKey && document.activeElement===last){event.preventDefault();first.focus();}
-  });
-  $('#contrastButton').addEventListener('click',event=>{
-    const on=document.body.classList.toggle('high-contrast');
-    const control=event.currentTarget;
-    control.setAttribute('aria-pressed',String(on));
-    control.replaceChildren();
-    const symbol=el('span','','◐');symbol.setAttribute('aria-hidden','true');
-    control.append(symbol,document.createTextNode(' High contrast: '+(on?'On':'Off')));
   });
   loadResources();
 })();
