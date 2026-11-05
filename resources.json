@@ -521,5 +521,116 @@
     "transferTask": "Introduce the same cue to a familiar real-world routine where the learner benefits from predictable transitions.",
     "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
     "spotlight": false
+  },
+  {
+    "id": "message-detective",
+    "title": "Message Detective",
+    "domain": "Digital Literacy",
+    "school": "Demonstration Resource",
+    "description": "Use a simulated smartphone to explore fictional messages, inspect the sender and request, and choose a safe next action.",
+    "learningObjective": "Check the sender and request in a simulated message before selecting a protective response.",
+    "suggestedUse": "Model the message-checking routine, then allow guided practice with gradually reduced prompts.",
+    "adaptations": [
+      "Use one message at a time and discuss why a response is safe.",
+      "Turn hints on for initial teaching and off for practice.",
+      "Offer verbal responses or pointing as an alternative to independent tapping."
+    ],
+    "tags": [
+      "Digital Literacy",
+      "Cyber Safety",
+      "Safe Messages"
+    ],
+    "hostingType": "local",
+    "previewUrl": "resources/message-detective.html",
+    "downloadUrl": "resources/message-detective.html",
+    "sourceUrl": null,
+    "creator": "SPEDTech POC demonstration",
+    "license": "Original demonstration HTML; review before redistribution",
+    "curriculumContext": "Illustrative Digital Literacy learning context; formal curriculum alignment has not been independently verified.",
+    "instructionalApproach": "Demonstrate checking the message context, rehearsing a safe response and asking for help when uncertain.",
+    "assessmentCheck": "Record whether the learner inspects sender and request, chooses a protective action and uses prompts.",
+    "transferTask": "Practise checking messages in an approved real app with a teacher; do not infer transfer from simulation success.",
+    "reviewStatus": "Prototype demonstration — requires educator review before classroom use",
+    "additionalDomains": [
+      "Healthy and Safe Relationships"
+    ],
+    "spotlight": false,
+    "skillArea": "Digital safety",
+    "context": "Living",
+    "resourceType": "Interactive HTML simulation"
+  },
+  {
+    "id": "privacy-studio",
+    "title": "Privacy Studio",
+    "domain": "Digital Literacy",
+    "school": "Demonstration Resource",
+    "description": "Change a fictional photo post by hiding identifying details, selecting who can view it, requesting permission and previewing the outcome.",
+    "learningObjective": "Identify details to remove and set a suitable audience before previewing a simulated post.",
+    "suggestedUse": "Let learners manipulate the visual post and see what changes, with an adult discussing consent and privacy.",
+    "adaptations": [
+      "Switch hotspot guides on or off as appropriate.",
+      "Prompt identification of private details before revealing buttons.",
+      "Pair with role-play about seeking permission before posting."
+    ],
+    "tags": [
+      "Digital Literacy",
+      "Privacy",
+      "Visual Editing"
+    ],
+    "hostingType": "local",
+    "previewUrl": "resources/privacy-studio.html",
+    "downloadUrl": "resources/privacy-studio.html",
+    "sourceUrl": null,
+    "creator": "SPEDTech POC demonstration",
+    "license": "Original demonstration HTML; review before redistribution",
+    "curriculumContext": "Illustrative Digital Literacy learning context; formal curriculum alignment has not been independently verified.",
+    "instructionalApproach": "Model identifying personal details and changing one setting at a time; fade cues and ask the learner to explain actions.",
+    "assessmentCheck": "Observe whether the learner notices name/location details, changes the audience and requests permission, noting prompts used.",
+    "transferTask": "Practise similar choices in a teacher-approved app without uploading real student information.",
+    "reviewStatus": "Prototype demonstration — requires educator review before classroom use",
+    "additionalDomains": [
+      "Healthy and Safe Relationships"
+    ],
+    "spotlight": false,
+    "skillArea": "Online privacy",
+    "context": "Living",
+    "resourceType": "Interactive HTML simulation"
+  },
+  {
+    "id": "work-shift",
+    "title": "Work Shift: Pack an Order",
+    "domain": "Vocational Education",
+    "school": "Demonstration Resource",
+    "description": "Read a simulated digital order, add visual stock items to a packing tray, check quantities and ask for clarification when instructions are incomplete.",
+    "learningObjective": "Select the correct simulated stock items and quantities, then check the order and seek clarification when needed.",
+    "suggestedUse": "Pair the digital simulation with real packing materials and discuss the difference between a virtual task and workplace performance.",
+    "adaptations": [
+      "Offer tap-to-add for learners who cannot drag items.",
+      "Display product picture cues, then fade them when appropriate.",
+      "Let learners check against a physical sample and repeat with new items."
+    ],
+    "tags": [
+      "Digital Literacy",
+      "Vocational Education",
+      "Workplace Instructions"
+    ],
+    "hostingType": "local",
+    "previewUrl": "resources/work-shift.html",
+    "downloadUrl": "resources/work-shift.html",
+    "sourceUrl": null,
+    "creator": "SPEDTech POC demonstration",
+    "license": "Original demonstration HTML; review before redistribution",
+    "curriculumContext": "Illustrative Digital Literacy learning context; formal curriculum alignment has not been independently verified.",
+    "instructionalApproach": "Demonstrate reading a digital order and completing a physical equivalent; teach a routine for checking work and asking for clarification.",
+    "assessmentCheck": "Check item selection, quantity accuracy, self-checking and clarification-seeking; record prompts separately.",
+    "transferTask": "Try a staff-supervised real packing task with a suitable digital or printed instruction list.",
+    "reviewStatus": "Prototype demonstration — requires educator review before classroom use",
+    "additionalDomains": [
+      "Digital Literacy"
+    ],
+    "spotlight": false,
+    "skillArea": "Digital workplace tasks",
+    "context": "Working",
+    "resourceType": "Interactive HTML simulation"
   }
 ]
