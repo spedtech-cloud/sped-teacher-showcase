@@ -342,42 +342,59 @@
     link.setAttribute('aria-label', label + ' (opens in a new tab)');
   }
   function openAbout(resource, opener) {
-    setupDialog(resource,opener);
-    const host = $('#aboutPane');host.replaceChildren();host.hidden=false;
-    add(host,'p','badge-line',resourceType(resource));
-    detailField(host,'Description',resource.description,'Description not provided.');
-    detailField(host,'Learning domain',domainText(resource),'Learning domain not specified.');
-    detailField(host,'Resource type',resourceType(resource),'Resource type not specified.');
-    if (resource.skillArea) detailField(host,'Digital skill area',resource.skillArea,'Not specified.');
-    if (resource.context) detailField(host,'Teaching context',resource.context,'Not specified.');
-    detailField(host,resource.domain === SUPPORT_TYPE ? 'Support purpose' : 'Learning objective',resource.learningObjective,'Learning objective not provided; confirm before use.');
-    detailField(host,'Suggested classroom use',resource.suggestedUse,'Suggested use not provided; review before classroom use.');
-    add(host,'h3','','Possible adaptations');
-    const list = el('ul');
-    const adaptations = Array.isArray(resource.adaptations) ? resource.adaptations.filter(x => typeof x === 'string' && x.trim()) : [];
-    if (adaptations.length) adaptations.forEach(x => add(list,'li','',x));
-    else add(list,'li','','No adaptations supplied; consider visual complexity, response options, prompting, pacing and task difficulty.');
-    host.append(list);
-    const more = el('section','about-teaching');
-    detailField(more,'Curriculum relevance (illustrative)',resource.curriculumContext,'No verified TLS alignment supplied.');
-    detailField(more,'Teaching approach',resource.instructionalApproach,'Not supplied.');
-    detailField(more,'What to observe',resource.assessmentCheck,'Not supplied.');
-    detailField(more,'Transfer beyond the screen',resource.transferTask,'Not supplied.');
-    host.append(more);
-    const source=el('section','about-source');
-    detailField(source,'Contributing school',resource.school,'Not specified.');
-    detailField(source,'Creator',resource.creator,'Creator not verified or not supplied.');
-    detailField(source,'Review status',resource.reviewStatus,'Not independently reviewed.');
-    detailField(source,'Download and reuse permissions',resource.reusePermission || resource.license,
-      'Permissions not specified; contact the rights holder before redistributing or adapting.');
-    if (secureUrl(resource.sourceUrl)) externalSourceLink(source,'Source information',resource.sourceUrl);
-    else detailField(source,'Source information',null,'No source information supplied.');
-    externalSourceLink(source,'Source repository',resource.sourceRepositoryUrl);
-    if (isExternal(resource)) {
-      if (!hasDownload(resource)) add(source,'p','download-unavailable', 'Source files unavailable for download. The external site link is for previewing, not downloading.');
-      add(source,'p','','External websites open separately and are not embedded in this showcase. Review their suitability before classroom use.');
+    const host = $('#aboutPane');
+    host.replaceChildren();
+
+    const addDetail = (section, label, value) => {
+      if (typeof value === 'string' && value.trim()) {
+        detailField(section, label, value);
+      }
+    };
+
+    addDetail(host, 'Description', resource.description);
+    addDetail(
+      host,
+      resource.domain === SUPPORT_TYPE ? 'Support purpose' : 'Learning objective',
+      resource.learningObjective
+    );
+    addDetail(host, 'Suggested classroom use', resource.suggestedUse);
+
+    const adaptations = Array.isArray(resource.adaptations)
+      ? resource.adaptations.filter(item => typeof item === 'string' && item.trim())
+      : [];
+
+    if (adaptations.length) {
+      add(host, 'h3', '', 'Possible adaptations');
+      const list = el('ul');
+      adaptations.forEach(item => add(list, 'li', '', item));
+      host.append(list);
     }
+
+    addDetail(host, 'Teaching approach', resource.instructionalApproach);
+    addDetail(host, 'What to observe', resource.assessmentCheck);
+    addDetail(host, 'Transfer beyond the screen', resource.transferTask);
+    addDetail(host, 'Curriculum relevance (illustrative)', resource.curriculumContext);
+
+    const source = el('section', 'about-source');
+    addDetail(source, 'Contributor', resource.school);
+    addDetail(source, 'Creator', resource.creator);
+    detailField(source, 'Review status', resource.reviewStatus, 'Review status not supplied.');
+    detailField(
+      source,
+      'Reuse permissions',
+      resource.reusePermission || resource.license,
+      'Check with the rights holder before adapting or redistributing.'
+    );
+    externalSourceLink(source, 'Source information', resource.sourceUrl);
+    externalSourceLink(source, 'Source repository', resource.sourceRepositoryUrl);
+
+    if (isExternal(resource)) {
+      add(source, 'p', '', 'Review the external activity before classroom use.');
+    }
+
     host.append(source);
+    setupDialog(resource, opener);
+    host.hidden = false;
   }
   function closeDialog(){if (dialog.open)dialog.close();}
   $('#showAll').addEventListener('click',()=>setFocus('all'));
