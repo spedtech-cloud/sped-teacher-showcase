@@ -73,7 +73,7 @@
   function downloadAction(resource) {
     if (!hasDownload(resource)) return null;
     if (isExternal(resource)) {
-      const link = el('a', 'button secondary', downloadLabel(resource) + ' ↗');
+          const downloadButton = button('button tertiary', '↓ ' + downloadLabel(resource), event => downloadResource(resource, event.currentTarget));
       link.href = resource.downloadUrl;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
