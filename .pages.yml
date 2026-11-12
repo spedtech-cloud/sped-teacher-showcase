@@ -1,0 +1,127 @@
+# SPED Interactive Showcase — Pages CMS starter configuration
+# Place this file in the ROOT of spedtech-cloud/sped-teacher-showcase.
+# Pilot on a temporary branch and compare resources.json before using on main.
+# The gallery itself only lists entries registered in resources.json.
+media:
+  - name: activities
+    label: HTML teaching activities
+    input: resources
+    output: resources
+    extensions: [html]
+    rename: safe
+settings:
+  content:
+    merge: true
+content:
+  - name: resources
+    label: Resource catalogue
+    type: file
+    path: resources.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: Unique ID
+        type: string
+        required: true
+        pattern: '^[a-z0-9-]+$'
+      - name: title
+        label: Resource title
+        type: string
+        required: true
+      - name: domain
+        label: Primary learning domain
+        type: select
+        required: true
+        options:
+          values:
+            - Communication and Language
+            - Numeracy
+            - Daily Living Skills
+            - Social-Emotional Learning
+            - Vocational Education
+            - Arts
+            - Physical Education
+            - Digital Literacy
+            - Teaching Supports
+      - name: additionalDomains
+        label: Additional focus areas
+        type: select
+        options:
+          multiple: true
+          values:
+            - Digital Literacy
+            - Healthy and Safe Relationships
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: learningObjective
+        label: Learning objective
+        type: text
+      - name: suggestedUse
+        label: Suggested classroom use
+        type: text
+      - name: school
+        label: Contributor / school display
+        type: string
+      - name: creator
+        label: Creator
+        type: string
+      - name: hostingType
+        label: Hosting type
+        type: select
+        options:
+          values: [local, external]
+      - name: previewUrl
+        label: Try It URL (e.g. resources/my-activity.html)
+        type: string
+        required: true
+        pattern: '^resources/[a-z0-9-]+\.html$'
+      - name: downloadUrl
+        label: Download URL (e.g. resources/my-activity.html)
+        type: string
+        pattern: '^resources/[a-z0-9-]+\.(html|zip)$'
+      - name: spotlight
+        label: Feature in Spotlight (only one resource should be true)
+        type: boolean
+      - name: skillArea
+        label: Skill area
+        type: string
+      - name: context
+        label: Context
+        type: select
+        options:
+          values: [Living, Learning, Working]
+      - name: tags
+        label: Search tags
+        type: string
+        list: true
+      - name: adaptations
+        label: Suggested adaptations
+        type: text
+        list: true
+      - name: instructionalApproach
+        label: Instructional approach
+        type: text
+      - name: assessmentCheck
+        label: Assessment check
+        type: text
+      - name: transferTask
+        label: Transfer activity
+        type: text
+      - name: curriculumContext
+        label: Curriculum context (non-restricted summaries only)
+        type: text
+      - name: reviewStatus
+        label: Review status
+        type: string
+      - name: license
+        label: Reuse permission / licence
+        type: text
+      - name: resourceType
+        label: Resource type
+        type: string
+      - name: reusePermission
+        label: Reuse permission details
+        type: text
