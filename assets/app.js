@@ -121,7 +121,6 @@
     const top = el('div', 'resource-top');
     const icon = add(top, 'span', 'resource-icon', ICONS[resource.domain] || '◈');
     icon.setAttribute('aria-hidden', 'true');
-    add(top, 'span', 'resource-type', resourceType(resource));
     const body = el('div', 'resource-body');
     add(body, 'p', 'resource-domain', domainText(resource));
     add(body, 'h3', '', resource.title);
