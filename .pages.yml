@@ -1,7 +1,3 @@
-# SPED Interactive Showcase — Pages CMS starter configuration
-# Place this file in the ROOT of spedtech-cloud/sped-teacher-showcase.
-# Pilot on a temporary branch and compare resources.json before using on main.
-# The gallery itself only lists entries registered in resources.json.
 media:
   - name: activities
     label: HTML teaching activities
@@ -9,9 +5,11 @@ media:
     output: resources
     extensions: [html]
     rename: safe
+
 settings:
   content:
     merge: true
+
 content:
   - name: resources
     label: Resource catalogue
@@ -20,15 +18,20 @@ content:
     format: json
     list: true
     fields:
-      - name: id
-        label: Unique ID
-        type: string
-        required: true
-        pattern: '^[a-z0-9-]+$'
       - name: title
         label: Resource title
         type: string
         required: true
+
+      - name: spotlight
+        label: Feature in Spotlight (select only one resource)
+        type: boolean
+
+      - name: description
+        label: Description
+        type: text
+        required: true
+
       - name: domain
         label: Primary learning domain
         type: select
@@ -44,84 +47,57 @@ content:
             - Physical Education
             - Digital Literacy
             - Teaching Supports
-      - name: additionalDomains
-        label: Additional focus areas
+
+      - name: context
+        label: Teaching context
         type: select
         options:
-          multiple: true
-          values:
-            - Digital Literacy
-            - Healthy and Safe Relationships
-      - name: description
-        label: Description
-        type: text
-        required: true
-      - name: learningObjective
-        label: Learning objective
-        type: text
-      - name: suggestedUse
-        label: Suggested classroom use
-        type: text
-      - name: school
-        label: Contributor / school display
-        type: string
-      - name: creator
-        label: Creator
-        type: string
-      - name: hostingType
-        label: Hosting type
-        type: select
-        options:
-          values: [local, external]
+          values: [Living, Learning, Working, Online Safety]
+
       - name: previewUrl
-        label: Try It URL (e.g. resources/my-activity.html)
+        label: Try It path
         type: string
         required: true
         pattern: '^resources/[a-z0-9-]+\.html$'
+
       - name: downloadUrl
-        label: Download URL (e.g. resources/my-activity.html)
+        label: Download path
         type: string
         pattern: '^resources/[a-z0-9-]+\.(html|zip)$'
-      - name: spotlight
-        label: Feature in Spotlight (only one resource should be true)
-        type: boolean
-      - name: skillArea
-        label: Skill area
+
+      - name: id
+        label: Resource ID
         type: string
-      - name: context
-        label: Context
+        required: true
+        pattern: '^[a-z0-9-]+$'
+
+      - name: additionalDomains
+        label: Additional focus areas
         type: select
+        hidden: true
         options:
-          values: [Living, Learning, Working]
-      - name: tags
-        label: Search tags
-        type: string
-        list: true
-      - name: adaptations
-        label: Suggested adaptations
-        type: text
-        list: true
-      - name: instructionalApproach
-        label: Instructional approach
-        type: text
-      - name: assessmentCheck
-        label: Assessment check
-        type: text
-      - name: transferTask
-        label: Transfer activity
-        type: text
-      - name: curriculumContext
-        label: Curriculum context (non-restricted summaries only)
-        type: text
-      - name: reviewStatus
-        label: Review status
-        type: string
-      - name: license
-        label: Reuse permission / licence
-        type: text
-      - name: resourceType
-        label: Resource type
-        type: string
-      - name: reusePermission
-        label: Reuse permission details
-        type: text
+          multiple: true
+          values: [Digital Literacy, Healthy and Safe Relationships]
+
+      - name: hostingType
+        label: Hosting type
+        type: select
+        hidden: true
+        options:
+          values: [local, external]
+
+      - { name: school, type: string, hidden: true }
+      - { name: creator, type: string, hidden: true }
+      - { name: learningObjective, type: text, hidden: true }
+      - { name: suggestedUse, type: text, hidden: true }
+      - { name: skillArea, type: string, hidden: true }
+      - { name: tags, type: string, list: true, hidden: true }
+      - { name: adaptations, type: text, list: true, hidden: true }
+      - { name: instructionalApproach, type: text, hidden: true }
+      - { name: assessmentCheck, type: text, hidden: true }
+      - { name: transferTask, type: text, hidden: true }
+      - { name: curriculumContext, type: text, hidden: true }
+      - { name: reviewStatus, type: string, hidden: true }
+      - { name: license, type: text, hidden: true }
+      - { name: resourceType, type: string, hidden: true }
+      - { name: reusePermission, type: text, hidden: true }
