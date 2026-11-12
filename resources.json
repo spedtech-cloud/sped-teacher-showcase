@@ -1,69 +1,7 @@
 [
   {
-    "title": "Five-Star Token Board",
-    "school": "Demonstration Resource",
-    "spotlight": false,
-    "description": "A teacher-controlled visual board for adding, removing and resetting five tokens.",
-    "domain": "Teaching Supports",
-    "previewUrl": "resources/five-star-token-board.html",
-    "downloadUrl": "resources/five-star-token-board.html",
-    "id": "five-star-token-board",
-    "hostingType": "local",
-    "creator": "POC demonstration team",
-    "learningObjective": "Provide a visible cue for progress towards an individually agreed learning or participation goal (teaching support).",
-    "suggestedUse": "Use only when appropriate to an individualised, positively framed plan; agree on a meaningful goal with the learner.",
-    "tags": [
-      "Positive Reinforcement",
-      "Visual Supports",
-      "Motivation"
-    ],
-    "adaptations": [
-      "Change the number of tokens to match the learner’s needs.",
-      "Use personalised reinforcement choices.",
-      "Pair with explicit instructions and immediate feedback.",
-      "Avoid response-cost or punishment practices; seek relevant professional guidance if behaviours communicate unmet needs."
-    ],
-    "instructionalApproach": "If appropriate, collaboratively define a specific achievable behaviour or task goal and provide consistent, positive feedback. Consider learner preferences, agency and dignity.",
-    "assessmentCheck": "Observe whether the agreed skill improves and generalises, rather than using tokens earned as the only indicator of progress.",
-    "transferTask": "Use the same positively framed goal during a real routine, then review whether the visual board is still needed.",
-    "curriculumContext": "Teaching Supports, not an MOE SPED learning domain. A visual reinforcement aid may support an individualised teaching plan, but it does not itself teach Social-Emotional Learning competencies.",
-    "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
-    "license": "Original demonstration file; review before redistribution"
-  },
-  {
-    "title": "My Visual Schedule",
-    "school": "Demonstration Resource",
-    "spotlight": false,
-    "description": "Follow a short routine, mark steps as done and change their order.",
-    "domain": "Daily Living Skills",
-    "previewUrl": "resources/my-visual-schedule.html",
-    "downloadUrl": "resources/my-visual-schedule.html",
-    "id": "my-visual-schedule",
-    "hostingType": "local",
-    "creator": "POC demonstration team",
-    "learningObjective": "Recognise the next activity and track completion of a familiar sequence.",
-    "suggestedUse": "Preview the routine, then support transitions using objects, photographs or familiar cues.",
-    "tags": [
-      "Routines",
-      "Transitions",
-      "Independence"
-    ],
-    "adaptations": [
-      "Replace the example routine with the learner’s real routine.",
-      "Shorten the list to two or three steps.",
-      "Pair words with individualised photographs.",
-      "Individualised objects, photographs or AAC symbols may be more meaningful than generic emojis."
-    ],
-    "instructionalApproach": "Model how to check what is next, practise in a predictable routine, and fade prompts based on observed learner readiness.",
-    "assessmentCheck": "Observe whether the learner anticipates or transitions to the next step, noting the type and level of support needed.",
-    "transferTask": "Use corresponding real-world visual cues during an actual classroom, home or community routine.",
-    "curriculumContext": "Daily Living Skills: routines, participation and increasing independence across familiar contexts. Illustrative application; specific TLS outcomes not verified.",
-    "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
-    "license": "Original demonstration file; review before redistribution"
-  },
-  {
     "title": "Message Detective",
-    "school": "Demonstration Resource",
+    "school": "SPEDTech",
     "spotlight": true,
     "description": "Use a simulated smartphone to explore fictional messages, inspect the sender and request, and choose a safe next action.",
     "domain": "Digital Literacy",
@@ -98,8 +36,126 @@
     "resourceType": "Interactive HTML simulation"
   },
   {
+    "title": "Work Shift: Pack an Order",
+    "school": "SPEDTech",
+    "spotlight": false,
+    "description": "Read a simulated digital order, add visual stock items to a packing tray, check quantities and ask for clarification when instructions are incomplete.",
+    "domain": "Vocational Education",
+    "previewUrl": "resources/work-shift.html",
+    "downloadUrl": "resources/work-shift.html",
+    "id": "work-shift",
+    "context": "Working",
+    "additionalDomains": [
+      "Digital Literacy"
+    ],
+    "hostingType": "local",
+    "creator": "SPEDTech POC demonstration",
+    "learningObjective": "Select the correct simulated stock items and quantities, then check the order and seek clarification when needed.",
+    "suggestedUse": "Pair the digital simulation with real packing materials and discuss the difference between a virtual task and workplace performance.",
+    "skillArea": "Digital workplace tasks",
+    "tags": [
+      "Digital Literacy",
+      "Vocational Education",
+      "Workplace Instructions"
+    ],
+    "adaptations": [
+      "Offer tap-to-add for learners who cannot drag items.",
+      "Display product picture cues, then fade them when appropriate.",
+      "Let learners check against a physical sample and repeat with new items."
+    ],
+    "instructionalApproach": "Demonstrate reading a digital order and completing a physical equivalent; teach a routine for checking work and asking for clarification.",
+    "assessmentCheck": "Check item selection, quantity accuracy, self-checking and clarification-seeking; record prompts separately.",
+    "transferTask": "Try a staff-supervised real packing task with a suitable digital or printed instruction list.",
+    "curriculumContext": "Illustrative Digital Literacy learning context; formal curriculum alignment has not been independently verified.",
+    "reviewStatus": "Prototype demonstration — requires educator review before classroom use",
+    "license": "Original demonstration HTML; review before redistribution",
+    "resourceType": "Interactive HTML simulation"
+  },
+  {
+    "title": "Work Chat: Message a Supervisor",
+    "school": "SPEDTech",
+    "spotlight": false,
+    "description": "Use a simulated work chat to update a supervisor, ask for help and respond to messages.",
+    "domain": "Vocational Education",
+    "previewUrl": "resources/workplace-message-practice.html",
+    "downloadUrl": "resources/workplace-message-practice.html",
+    "id": "workplace-message-practice"
+  },
+  {
+    "title": "Tablet Controls",
+    "school": "SPEDTech",
+    "spotlight": false,
+    "description": "Adjust a simulated tablet's settings to prepare it for a class activity.",
+    "domain": "Digital Literacy",
+    "previewUrl": "resources/device-care-and-controls.html",
+    "downloadUrl": "resources/device-care-and-controls.html",
+    "id": "device-care-and-controls"
+  },
+  {
+    "title": "Five-Star Token Board",
+    "school": "SPEDTech",
+    "spotlight": false,
+    "description": "A teacher-controlled visual board for adding, removing and resetting five tokens.",
+    "domain": "Teaching Supports",
+    "previewUrl": "resources/five-star-token-board.html",
+    "downloadUrl": "resources/five-star-token-board.html",
+    "id": "five-star-token-board",
+    "hostingType": "local",
+    "creator": "POC demonstration team",
+    "learningObjective": "Provide a visible cue for progress towards an individually agreed learning or participation goal (teaching support).",
+    "suggestedUse": "Use only when appropriate to an individualised, positively framed plan; agree on a meaningful goal with the learner.",
+    "tags": [
+      "Positive Reinforcement",
+      "Visual Supports",
+      "Motivation"
+    ],
+    "adaptations": [
+      "Change the number of tokens to match the learner’s needs.",
+      "Use personalised reinforcement choices.",
+      "Pair with explicit instructions and immediate feedback.",
+      "Avoid response-cost or punishment practices; seek relevant professional guidance if behaviours communicate unmet needs."
+    ],
+    "instructionalApproach": "If appropriate, collaboratively define a specific achievable behaviour or task goal and provide consistent, positive feedback. Consider learner preferences, agency and dignity.",
+    "assessmentCheck": "Observe whether the agreed skill improves and generalises, rather than using tokens earned as the only indicator of progress.",
+    "transferTask": "Use the same positively framed goal during a real routine, then review whether the visual board is still needed.",
+    "curriculumContext": "Teaching Supports, not an MOE SPED learning domain. A visual reinforcement aid may support an individualised teaching plan, but it does not itself teach Social-Emotional Learning competencies.",
+    "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
+    "license": "Original demonstration file; review before redistribution"
+  },
+  {
+    "title": "My Visual Schedule",
+    "school": "SPEDTech",
+    "spotlight": false,
+    "description": "Follow a short routine, mark steps as done and change their order.",
+    "domain": "Daily Living Skills",
+    "previewUrl": "resources/my-visual-schedule.html",
+    "downloadUrl": "resources/my-visual-schedule.html",
+    "id": "my-visual-schedule",
+    "hostingType": "local",
+    "creator": "POC demonstration team",
+    "learningObjective": "Recognise the next activity and track completion of a familiar sequence.",
+    "suggestedUse": "Preview the routine, then support transitions using objects, photographs or familiar cues.",
+    "tags": [
+      "Routines",
+      "Transitions",
+      "Independence"
+    ],
+    "adaptations": [
+      "Replace the example routine with the learner’s real routine.",
+      "Shorten the list to two or three steps.",
+      "Pair words with individualised photographs.",
+      "Individualised objects, photographs or AAC symbols may be more meaningful than generic emojis."
+    ],
+    "instructionalApproach": "Model how to check what is next, practise in a predictable routine, and fade prompts based on observed learner readiness.",
+    "assessmentCheck": "Observe whether the learner anticipates or transitions to the next step, noting the type and level of support needed.",
+    "transferTask": "Use corresponding real-world visual cues during an actual classroom, home or community routine.",
+    "curriculumContext": "Daily Living Skills: routines, participation and increasing independence across familiar contexts. Illustrative application; specific TLS outcomes not verified.",
+    "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
+    "license": "Original demonstration file; review before redistribution"
+  },
+  {
     "title": "Privacy Studio",
-    "school": "Demonstration Resource",
+    "school": "SPEDTech",
     "spotlight": false,
     "description": "Change a fictional photo post by hiding identifying details, selecting who can view it, requesting permission and previewing the outcome.",
     "domain": "Digital Literacy",
@@ -134,39 +190,13 @@
     "resourceType": "Interactive HTML simulation"
   },
   {
-    "title": "Work Shift: Pack an Order",
-    "school": "Demonstration Resource",
+    "title": "Before You Forward",
+    "school": "SPEDTech",
     "spotlight": false,
-    "description": "Read a simulated digital order, add visual stock items to a packing tray, check quantities and ask for clarification when instructions are incomplete.",
-    "domain": "Vocational Education",
-    "previewUrl": "resources/work-shift.html",
-    "downloadUrl": "resources/work-shift.html",
-    "id": "work-shift",
-    "context": "Working",
-    "additionalDomains": [
-      "Digital Literacy"
-    ],
-    "hostingType": "local",
-    "creator": "SPEDTech POC demonstration",
-    "learningObjective": "Select the correct simulated stock items and quantities, then check the order and seek clarification when needed.",
-    "suggestedUse": "Pair the digital simulation with real packing materials and discuss the difference between a virtual task and workplace performance.",
-    "skillArea": "Digital workplace tasks",
-    "tags": [
-      "Digital Literacy",
-      "Vocational Education",
-      "Workplace Instructions"
-    ],
-    "adaptations": [
-      "Offer tap-to-add for learners who cannot drag items.",
-      "Display product picture cues, then fade them when appropriate.",
-      "Let learners check against a physical sample and repeat with new items."
-    ],
-    "instructionalApproach": "Demonstrate reading a digital order and completing a physical equivalent; teach a routine for checking work and asking for clarification.",
-    "assessmentCheck": "Check item selection, quantity accuracy, self-checking and clarification-seeking; record prompts separately.",
-    "transferTask": "Try a staff-supervised real packing task with a suitable digital or printed instruction list.",
-    "curriculumContext": "Illustrative Digital Literacy learning context; formal curriculum alignment has not been independently verified.",
-    "reviewStatus": "Prototype demonstration — requires educator review before classroom use",
-    "license": "Original demonstration HTML; review before redistribution",
-    "resourceType": "Interactive HTML simulation"
+    "description": "Check a forwarded message against a school notice before deciding whether to share it.",
+    "domain": "Digital Literacy",
+    "previewUrl": "resources/before-you-forward.html",
+    "downloadUrl": "resources/before-you-forward.html",
+    "id": "before-you-forward"
   }
 ]
