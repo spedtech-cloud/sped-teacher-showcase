@@ -95,7 +95,10 @@ content:
       - { name: learningObjective, type: text, hidden: true }
       - { name: suggestedUse, type: text, hidden: true }
       - { name: skillArea, type: string, hidden: true }
-      - { name: tags, type: string, list: true, hidden: true }
+      - name: tags
+        label: Tags
+        type: string
+        list: true
       - { name: adaptations, type: text, list: true, hidden: true }
       - { name: instructionalApproach, type: text, hidden: true }
       - { name: assessmentCheck, type: text, hidden: true }
