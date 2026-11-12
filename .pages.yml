@@ -23,6 +23,10 @@ content:
         type: string
         required: true
 
+      - name: school
+        label: Contributor
+        type: string
+
       - name: spotlight
         label: Feature in Spotlight (select only one resource)
         type: boolean
@@ -48,12 +52,6 @@ content:
             - Digital Literacy
             - Teaching Supports
 
-      - name: context
-        label: Teaching context
-        type: select
-        options:
-          values: [Living, Learning, Working, Online Safety]
-
       - name: previewUrl
         label: Try It path
         type: string
@@ -71,6 +69,13 @@ content:
         required: true
         pattern: '^[a-z0-9-]+$'
 
+      - name: context
+        label: Teaching context
+        type: select
+        hidden: true
+        options:
+          values: [Living, Learning, Working, Online Safety]
+
       - name: additionalDomains
         label: Additional focus areas
         type: select
@@ -86,7 +91,6 @@ content:
         options:
           values: [local, external]
 
-      - { name: school, type: string, hidden: true }
       - { name: creator, type: string, hidden: true }
       - { name: learningObjective, type: text, hidden: true }
       - { name: suggestedUse, type: text, hidden: true }
