@@ -3,57 +3,54 @@
     "id": "digital-work-checklist",
     "title": "Digital Work Checklist",
     "domain": "Vocational Education",
-    "school": "Demonstration Resource",
+    "additionalDomains": [
+      "Digital Literacy"
+    ],
     "description": "Navigate a fictional job app, open a task card and update a digital workplace checklist.",
     "learningObjective": "Navigate a simulated app to locate an assigned job and update completion status with appropriate prompting.",
     "suggestedUse": "Pair the digital checklist with a real stationery-packing task; ask the learner to open the correct job card and check off actual items packed.",
-    "adaptations": [
-      "Use Guided mode before Independent mode, and record prompt levels.",
-      "Reduce the number of task steps or replace job descriptions with familiar school-based vocational tasks.",
-      "Allow pointing, touch access, keyboard or an appropriate access device; use real objects alongside the screen.",
-      "Do not equate tapping Done with completing the physical task: verify work separately."
-    ],
+    "school": "Demonstration Resource",
+    "creator": "POC demonstration team",
+    "hostingType": "local",
+    "previewUrl": "resources/digital-work-checklist.html",
+    "downloadUrl": "resources/digital-work-checklist.html",
+    "spotlight": false,
+    "skillArea": "Digital Work Skills",
+    "context": "Working",
     "tags": [
       "Digital Literacy",
       "Digital Navigation",
       "Workplace Technology",
       "Task Sequencing"
     ],
-    "hostingType": "local",
-    "previewUrl": "resources/digital-work-checklist.html",
-    "downloadUrl": "resources/digital-work-checklist.html",
-    "sourceUrl": null,
-    "creator": "POC demonstration team",
-    "license": "Original demonstration file; review before redistribution",
-    "curriculumContext": "[Provisional] Vocational Education with digital literacy embedded: using a simulated digital checklist to support a familiar work process. Informed broadly by IMDA Digital Skills for Life (smart-device use). Not verified against a specific MOE SPED TLS or school Digital Literacy outcome.",
+    "adaptations": [
+      "Use Guided mode before Independent mode, and record prompt levels.",
+      "Reduce the number of task steps or replace job descriptions with familiar school-based vocational tasks.",
+      "Allow pointing, touch access, keyboard or an appropriate access device; use real objects alongside the screen.",
+      "Do not equate tapping Done with completing the physical task: verify work separately."
+    ],
     "instructionalApproach": "Model opening a job app and checking a task card; then run guided practice with physical materials, fade cues, and revisit in a real task context.",
     "assessmentCheck": "Record whether the learner independently identifies the correct app, selects the intended job card, marks each completed step, and requests verification; record prompts separately from task accuracy.",
     "transferTask": "Use an approved digital checklist alongside a real school or vocational routine, with staff supervision and data-privacy checks.",
+    "curriculumContext": "[Provisional] Vocational Education with digital literacy embedded: using a simulated digital checklist to support a familiar work process. Informed broadly by IMDA Digital Skills for Life (smart-device use). Not verified against a specific MOE SPED TLS or school Digital Literacy outcome.",
     "reviewStatus": "Prototype demonstration — digital literacy / TLS alignment requires curriculum review",
-    "additionalDomains": [
-      "Digital Literacy"
-    ],
-    "spotlight": true,
-    "skillArea": "Digital Work Skills",
-    "context": "Working"
+    "license": "Original demonstration file; review before redistribution"
   },
   {
     "id": "find-everyday-information",
     "title": "Find Everyday Information",
     "domain": "Digital Literacy",
-    "skillArea": "Everyday Digital Skills",
-    "context": "Living",
-    "school": "Demonstration Resource",
-    "creator": "Original POC teaching demonstration (AI-assisted)",
     "description": "Use a fictional search interface to find an opening time, a price and a bus-arrival estimate.",
     "learningObjective": "Locate and select relevant information within a simple digital result card.",
     "suggestedUse": "Model an everyday need, then have the learner open the suitable practice screen and identify the requested detail.",
-    "adaptations": [
-      "Reduce to one practice question.",
-      "Read the prompt aloud or pair with a visual cue.",
-      "Present fewer answer options.",
-      "Move from guided choices to independent searches on trusted real apps."
-    ],
+    "school": "Demonstration Resource",
+    "creator": "Original POC teaching demonstration (AI-assisted)",
+    "hostingType": "local",
+    "previewUrl": "resources/find-everyday-information.html",
+    "downloadUrl": "resources/find-everyday-information.html",
+    "spotlight": false,
+    "skillArea": "Everyday Digital Skills",
+    "context": "Living",
     "tags": [
       "Digital Literacy",
       "Search",
@@ -61,37 +58,35 @@
       "Information",
       "Living"
     ],
-    "hostingType": "local",
-    "previewUrl": "resources/find-everyday-information.html",
-    "downloadUrl": "resources/find-everyday-information.html",
-    "sourceUrl": null,
-    "sourceRepositoryUrl": null,
-    "resourceType": "Interactive HTML practice",
-    "reusePermission": "Adapt the original demonstration HTML for local teaching; review school policies, suitability and third-party contributions before redistributing.",
-    "curriculumContext": "Illustrative digital literacy skill application; not an officially verified curriculum outcome mapping.",
+    "adaptations": [
+      "Reduce to one practice question.",
+      "Read the prompt aloud or pair with a visual cue.",
+      "Present fewer answer options.",
+      "Move from guided choices to independent searches on trusted real apps."
+    ],
     "instructionalApproach": "Model finding an appropriate app, scanning for a label and selecting the needed information.",
     "assessmentCheck": "Check whether the learner finds a new item and record prompts used.",
     "transferTask": "Find a current opening time or bus arrival with an educator on an approved real service.",
+    "curriculumContext": "Illustrative digital literacy skill application; not an officially verified curriculum outcome mapping.",
     "reviewStatus": "Prototype demonstration — requires educator review before classroom use",
-    "additionalDomains": []
+    "resourceType": "Interactive HTML practice",
+    "reusePermission": "Adapt the original demonstration HTML for local teaching; review school policies, suitability and third-party contributions before redistributing."
   },
   {
     "id": "create-and-save-a-note",
     "title": "Create and Save a Note",
     "domain": "Digital Literacy",
-    "skillArea": "Learning with Technology",
-    "context": "Learning",
-    "school": "Demonstration Resource",
-    "creator": "Original POC teaching demonstration (AI-assisted)",
     "description": "Build a simple shopping list or reminder and save it to a temporary practice folder.",
     "learningObjective": "Create a short note, save it in a practice folder and reopen it.",
     "suggestedUse": "Practise selecting relevant items, saving the simulated note and opening it again.",
-    "adaptations": [
-      "Reduce the number of choices.",
-      "Provide a first modelled example.",
-      "Use student-relevant, non-personal sample items.",
-      "Progress to editing a note in a real approved app."
-    ],
+    "school": "Demonstration Resource",
+    "creator": "Original POC teaching demonstration (AI-assisted)",
+    "hostingType": "local",
+    "previewUrl": "resources/create-and-save-a-note.html",
+    "downloadUrl": "resources/create-and-save-a-note.html",
+    "spotlight": false,
+    "skillArea": "Learning with Technology",
+    "context": "Learning",
     "tags": [
       "Digital Literacy",
       "Create",
@@ -99,37 +94,35 @@
       "Organise",
       "Learning"
     ],
-    "hostingType": "local",
-    "previewUrl": "resources/create-and-save-a-note.html",
-    "downloadUrl": "resources/create-and-save-a-note.html",
-    "sourceUrl": null,
-    "sourceRepositoryUrl": null,
-    "resourceType": "Interactive HTML practice",
-    "reusePermission": "Adapt the original demonstration HTML for local teaching; review school policies, suitability and third-party contributions before redistributing.",
-    "curriculumContext": "Illustrative digital literacy skill application; not an officially verified curriculum outcome mapping.",
+    "adaptations": [
+      "Reduce the number of choices.",
+      "Provide a first modelled example.",
+      "Use student-relevant, non-personal sample items.",
+      "Progress to editing a note in a real approved app."
+    ],
     "instructionalApproach": "Demonstrate create, review, save and reopen; fade each cue gradually.",
     "assessmentCheck": "Observe sequence completion and the support needed to find a saved note.",
     "transferTask": "Create and find a real classroom reminder in a school-approved notes application.",
+    "curriculumContext": "Illustrative digital literacy skill application; not an officially verified curriculum outcome mapping.",
     "reviewStatus": "Prototype demonstration — requires educator review before classroom use",
-    "additionalDomains": []
+    "resourceType": "Interactive HTML practice",
+    "reusePermission": "Adapt the original demonstration HTML for local teaching; review school policies, suitability and third-party contributions before redistributing."
   },
   {
     "id": "device-care-and-controls",
     "title": "Device Care and Controls",
     "domain": "Digital Literacy",
-    "skillArea": "Device Operation & Care",
-    "context": "Learning",
-    "school": "Demonstration Resource",
-    "creator": "Original POC teaching demonstration (AI-assisted)",
     "description": "Use simulated Wi-Fi, volume, charging and screen controls to practise readiness and care.",
     "learningObjective": "Select and adjust appropriate device settings for a simple learning and care routine.",
     "suggestedUse": "Use the simulated tablet to prepare for a lesson and complete an end-of-lesson care routine.",
-    "adaptations": [
-      "Begin with a single control.",
-      "Pair onscreen cues with the school’s actual devices.",
-      "Use a step-by-step visual checklist.",
-      "Adapt motor response requirements and provide more time."
-    ],
+    "school": "Demonstration Resource",
+    "creator": "Original POC teaching demonstration (AI-assisted)",
+    "hostingType": "local",
+    "previewUrl": "resources/device-care-and-controls.html",
+    "downloadUrl": "resources/device-care-and-controls.html",
+    "spotlight": false,
+    "skillArea": "Device Operation & Care",
+    "context": "Learning",
     "tags": [
       "Digital Literacy",
       "Device",
@@ -137,37 +130,35 @@
       "Volume",
       "Care"
     ],
-    "hostingType": "local",
-    "previewUrl": "resources/device-care-and-controls.html",
-    "downloadUrl": "resources/device-care-and-controls.html",
-    "sourceUrl": null,
-    "sourceRepositoryUrl": null,
-    "resourceType": "Interactive HTML practice",
-    "reusePermission": "Adapt the original demonstration HTML for local teaching; review school policies, suitability and third-party contributions before redistributing.",
-    "curriculumContext": "Illustrative digital literacy skill application; not an officially verified curriculum outcome mapping.",
+    "adaptations": [
+      "Begin with a single control.",
+      "Pair onscreen cues with the school’s actual devices.",
+      "Use a step-by-step visual checklist.",
+      "Adapt motor response requirements and provide more time."
+    ],
     "instructionalApproach": "Model the practical reason for each device control; rehearse the same cue on an approved real device.",
     "assessmentCheck": "Record correct settings and whether verbal, visual or physical support is required.",
     "transferTask": "Prepare a classroom tablet for an actual learning task following school procedures.",
+    "curriculumContext": "Illustrative digital literacy skill application; not an officially verified curriculum outcome mapping.",
     "reviewStatus": "Prototype demonstration — requires educator review before classroom use",
-    "additionalDomains": []
+    "resourceType": "Interactive HTML practice",
+    "reusePermission": "Adapt the original demonstration HTML for local teaching; review school policies, suitability and third-party contributions before redistributing."
   },
   {
     "id": "check-before-sharing",
     "title": "Check Before Sharing",
     "domain": "Digital Literacy",
-    "skillArea": "Checking Online Information",
-    "context": "Online Safety",
-    "school": "Demonstration Resource",
-    "creator": "Original POC teaching demonstration (AI-assisted)",
     "description": "Choose safer next steps for fictional forwarded messages, prize links and online claims.",
     "learningObjective": "Pause and identify a trustworthy way to verify a claim before passing it on.",
     "suggestedUse": "Discuss short fictional posts, select a next action and explain why.",
-    "adaptations": [
-      "Show one message at a time.",
-      "Use a read-aloud or visual explanation.",
-      "Reduce response options while teaching the same strategy.",
-      "Increase complexity only after demonstrating consistent understanding."
-    ],
+    "school": "Demonstration Resource",
+    "creator": "Original POC teaching demonstration (AI-assisted)",
+    "hostingType": "local",
+    "previewUrl": "resources/check-before-sharing.html",
+    "downloadUrl": "resources/check-before-sharing.html",
+    "spotlight": false,
+    "skillArea": "Checking Online Information",
+    "context": "Living",
     "tags": [
       "Digital Literacy",
       "Verify",
@@ -175,462 +166,449 @@
       "Trusted source",
       "Safety"
     ],
-    "hostingType": "local",
-    "previewUrl": "resources/check-before-sharing.html",
-    "downloadUrl": "resources/check-before-sharing.html",
-    "sourceUrl": null,
-    "sourceRepositoryUrl": null,
-    "resourceType": "Interactive HTML practice",
-    "reusePermission": "Adapt the original demonstration HTML for local teaching; review school policies, suitability and third-party contributions before redistributing.",
-    "curriculumContext": "Illustrative digital literacy skill application; not an officially verified curriculum outcome mapping.",
+    "adaptations": [
+      "Show one message at a time.",
+      "Use a read-aloud or visual explanation.",
+      "Reduce response options while teaching the same strategy.",
+      "Increase complexity only after demonstrating consistent understanding."
+    ],
     "instructionalApproach": "Model stopping to verify information with an official source or trusted adult.",
     "assessmentCheck": "Record whether the learner chooses an appropriate verification step and can transfer it to a new example.",
     "transferTask": "Practise checking a teacher-selected real digital claim before sharing with the class.",
+    "curriculumContext": "Illustrative digital literacy skill application; not an officially verified curriculum outcome mapping.",
     "reviewStatus": "Prototype demonstration — requires educator review before classroom use",
-    "additionalDomains": []
+    "resourceType": "Interactive HTML practice",
+    "reusePermission": "Adapt the original demonstration HTML for local teaching; review school policies, suitability and third-party contributions before redistributing."
   },
   {
     "id": "workplace-message-practice",
     "title": "Workplace Message Practice",
     "domain": "Communication and Language",
-    "school": "Demonstration Resource",
+    "additionalDomains": [
+      "Digital Literacy"
+    ],
     "description": "Practise selecting a recipient and a clear, relevant workplace message in a fictional chat app.",
     "learningObjective": "Select an appropriate recipient and functional message for a given workplace situation.",
     "suggestedUse": "Role-play a job update or help request after completing a supervised work task.",
-    "adaptations": [
-      "Use Guided mode or reduce the number of messages to support earlier communicators.",
-      "Replace written phrases with learner-approved AAC symbols or personalised messages while preserving communication intent.",
-      "Model respectful, concise workplace communication with real communication partners.",
-      "Do not use learner phone numbers, staff contact lists, real chat accounts or identifiable personal information in this simulation."
-    ],
+    "school": "Demonstration Resource",
+    "creator": "POC demonstration team",
+    "hostingType": "local",
+    "previewUrl": "resources/workplace-message-practice.html",
+    "downloadUrl": "resources/workplace-message-practice.html",
+    "spotlight": false,
+    "skillArea": "Online Communication",
+    "context": "Working",
     "tags": [
       "Digital Literacy",
       "Digital Communication",
       "Vocational Education",
       "Functional Communication"
     ],
-    "hostingType": "local",
-    "previewUrl": "resources/workplace-message-practice.html",
-    "downloadUrl": "resources/workplace-message-practice.html",
-    "sourceUrl": null,
-    "creator": "POC demonstration team",
-    "license": "Original demonstration file; review before redistribution",
-    "curriculumContext": "[Provisional] Communication and Language with possible Vocational Education application; broadly related to IMDA Digital Skills for Life (communicate online). Not a verified MOE SPED TLS learning-outcome mapping.",
+    "adaptations": [
+      "Use Guided mode or reduce the number of messages to support earlier communicators.",
+      "Replace written phrases with learner-approved AAC symbols or personalised messages while preserving communication intent.",
+      "Model respectful, concise workplace communication with real communication partners.",
+      "Do not use learner phone numbers, staff contact lists, real chat accounts or identifiable personal information in this simulation."
+    ],
     "instructionalApproach": "Model the situation, recipient and message choice, then practise supported selection; gradually vary contexts and reduce prompts. A message-selection simulation does not test spontaneous digital writing.",
     "assessmentCheck": "Across different scenarios, note correct recipient, relevance of message, prompting needed and ability to generalise the purpose of the communication.",
     "transferTask": "With appropriate permissions, practise sending a real workplace update through a school-approved channel to an agreed communication partner.",
+    "curriculumContext": "[Provisional] Communication and Language with possible Vocational Education application; broadly related to IMDA Digital Skills for Life (communicate online). Not a verified MOE SPED TLS learning-outcome mapping.",
     "reviewStatus": "Prototype demonstration — digital literacy / TLS alignment requires curriculum review",
-    "additionalDomains": [
-      "Digital Literacy"
-    ],
-    "spotlight": false,
-    "skillArea": "Online Communication",
-    "context": "Working"
+    "license": "Original demonstration file; review before redistribution"
   },
   {
     "id": "safe-online-choices",
     "title": "Safe Online Choices",
     "domain": "Daily Living Skills",
-    "school": "Demonstration Resource",
+    "additionalDomains": [
+      "Digital Literacy",
+      "Healthy and Safe Relationships"
+    ],
     "description": "Choose safer responses to fictional situations involving private information, unexpected messages and respectful online behaviour.",
     "learningObjective": "Identify a safer response to basic online privacy and communication situations.",
     "suggestedUse": "Use each scenario as a starting point for teacher-guided discussion and rehearsal of asking for help.",
-    "adaptations": [
-      "Read scenarios aloud and use concrete visuals or simplified language where necessary.",
-      "Offer two choices at a time and model what to do when unsure.",
-      "Practise the help-seeking response with a trusted adult or educator.",
-      "Avoid asking learners to enter or reveal actual passwords, ID numbers, contact details or school-account information."
-    ],
+    "school": "Demonstration Resource",
+    "creator": "POC demonstration team",
+    "hostingType": "local",
+    "previewUrl": "resources/safe-online-choices.html",
+    "downloadUrl": "resources/safe-online-choices.html",
+    "spotlight": false,
+    "skillArea": "Online Safety",
+    "context": "Living",
     "tags": [
       "Digital Literacy",
       "Online Safety",
       "Privacy",
       "Digital Citizenship"
     ],
-    "hostingType": "local",
-    "previewUrl": "resources/safe-online-choices.html",
-    "downloadUrl": "resources/safe-online-choices.html",
-    "sourceUrl": null,
-    "creator": "POC demonstration team",
-    "license": "Original demonstration file; review before redistribution",
-    "curriculumContext": "[Provisional] Digital safety in everyday living, broadly informed by IMDA Digital Skills for Life (be safe, smart and kind online). Daily Living Skills is a suggested discovery category, not a verified MOE SPED TLS mapping. [Provisional] The respectful online communication scenario may be a discussion starter for Healthy and Safe Relationships, but is not a verified HSR learning-outcome mapping.",
+    "adaptations": [
+      "Read scenarios aloud and use concrete visuals or simplified language where necessary.",
+      "Offer two choices at a time and model what to do when unsure.",
+      "Practise the help-seeking response with a trusted adult or educator.",
+      "Avoid asking learners to enter or reveal actual passwords, ID numbers, contact details or school-account information."
+    ],
     "instructionalApproach": "Model a short decision routine: pause, keep information private, check with a trusted person, and communicate respectfully. Practise with supportive feedback and then novel examples.",
     "assessmentCheck": "Track the learner’s choice, explanation or help-seeking response across varied examples and the level of prompting required; do not treat repeated quiz answers as proof of real-world safety skills.",
     "transferTask": "During supervised real digital activities, rehearse seeking help before sharing information or responding to unexpected messages.",
+    "curriculumContext": "[Provisional] Digital safety in everyday living, broadly informed by IMDA Digital Skills for Life (be safe, smart and kind online). Daily Living Skills is a suggested discovery category, not a verified MOE SPED TLS mapping. [Provisional] The respectful online communication scenario may be a discussion starter for Healthy and Safe Relationships, but is not a verified HSR learning-outcome mapping.",
     "reviewStatus": "Prototype demonstration — digital literacy / TLS alignment requires curriculum review",
-    "additionalDomains": [
-      "Digital Literacy",
-      "Healthy and Safe Relationships"
-    ],
-    "spotlight": false,
-    "skillArea": "Online Safety",
-    "context": "Online Safety"
+    "license": "Original demonstration file; review before redistribution"
   },
   {
     "id": "dollar-up-calculator",
     "title": "Dollar-Up Calculator",
     "domain": "Numeracy",
-    "school": "Demonstration Resource",
     "description": "Practise selecting the whole-dollar amount needed to pay for an item in Singapore dollars.",
     "learningObjective": "Identify the smallest whole-dollar amount that covers a stated price.",
     "suggestedUse": "Use with a pretend shop or picture menu; introduce real coins and notes alongside the screen.",
+    "school": "Demonstration Resource",
+    "creator": "POC demonstration team",
+    "hostingType": "local",
+    "previewUrl": "resources/dollar-up-calculator.html",
+    "downloadUrl": "resources/dollar-up-calculator.html",
+    "spotlight": false,
+    "tags": [
+      "Money Skills",
+      "Functional Numeracy",
+      "Shopping"
+    ],
     "adaptations": [
       "Reduce the number of answer options.",
       "Pair each price with physical play money.",
       "Add familiar school-canteen items and prices.",
       "Check prerequisite understanding of dollar amounts and money exchange; this strategy is not appropriate for every purchasing task."
     ],
-    "tags": [
-      "Money Skills",
-      "Functional Numeracy",
-      "Shopping"
-    ],
-    "hostingType": "local",
-    "previewUrl": "resources/dollar-up-calculator.html",
-    "downloadUrl": "resources/dollar-up-calculator.html",
-    "sourceUrl": null,
-    "creator": "POC demonstration team",
-    "license": "Original demonstration file; review before redistribution",
-    "curriculumContext": "Numeracy: functional money concepts in everyday shopping contexts. This is an illustrative application, not a verified mapping to a specific MOE TLS learning outcome.",
     "instructionalApproach": "Explicitly model the dollar-up rule using play money; guide a few examples; fade prompts after successful practice.",
     "assessmentCheck": "Present a new Singapore-dollar price and record whether the learner selects the correct whole-dollar amount independently or with prompts.",
     "transferTask": "Practise paying for a low-cost item at a simulated canteen or shop using physical money.",
+    "curriculumContext": "Numeracy: functional money concepts in everyday shopping contexts. This is an illustrative application, not a verified mapping to a specific MOE TLS learning outcome.",
     "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
-    "spotlight": false
+    "license": "Original demonstration file; review before redistribution"
   },
   {
     "id": "communication-choice-board",
     "title": "Communication Choice Board",
     "domain": "Communication and Language",
-    "school": "Demonstration Resource",
     "description": "Build a simple request by selecting labelled symbols and phrases.",
     "learningObjective": "Make a choice and communicate a basic want or need.",
     "suggestedUse": "Model functional requests during short routines, with access to the learner’s existing AAC system.",
+    "school": "Demonstration Resource",
+    "creator": "POC demonstration team",
+    "hostingType": "local",
+    "previewUrl": "resources/communication-choice-board.html",
+    "downloadUrl": "resources/communication-choice-board.html",
+    "spotlight": false,
+    "tags": [
+      "AAC",
+      "Choice-Making",
+      "Requests"
+    ],
     "adaptations": [
       "Replace examples with personalised, familiar vocabulary.",
       "Adjust the number of choices displayed.",
       "Use photographs or agreed AAC symbols with appropriate licensing.",
       "This simple demonstration board does not replace a learner’s personalised AAC system, established vocabulary or speech-language professional advice."
     ],
-    "tags": [
-      "AAC",
-      "Choice-Making",
-      "Requests"
-    ],
-    "hostingType": "local",
-    "previewUrl": "resources/communication-choice-board.html",
-    "downloadUrl": "resources/communication-choice-board.html",
-    "sourceUrl": null,
-    "creator": "POC demonstration team",
-    "license": "Original demonstration file; review before redistribution",
-    "curriculumContext": "Communication and Language: supported functional expression of choices, wants and needs. Illustrative application; no verified TLS learning-outcome mapping.",
     "instructionalApproach": "A communication partner models the available words during a meaningful routine and acknowledges intentional communication, without requiring spoken repetition.",
     "assessmentCheck": "Record spontaneous or prompted choice-making across routines; do not treat a single successful button press as evidence of functional communication.",
     "transferTask": "Offer the same communicative opportunities during snack time, play or transitions with the learner’s everyday AAC system.",
+    "curriculumContext": "Communication and Language: supported functional expression of choices, wants and needs. Illustrative application; no verified TLS learning-outcome mapping.",
     "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
-    "spotlight": false
+    "license": "Original demonstration file; review before redistribution"
   },
   {
     "id": "five-star-token-board",
     "title": "Five-Star Token Board",
     "domain": "Teaching Supports",
-    "school": "Demonstration Resource",
     "description": "A teacher-controlled visual board for adding, removing and resetting five tokens.",
     "learningObjective": "Provide a visible cue for progress towards an individually agreed learning or participation goal (teaching support).",
     "suggestedUse": "Use only when appropriate to an individualised, positively framed plan; agree on a meaningful goal with the learner.",
+    "school": "Demonstration Resource",
+    "creator": "POC demonstration team",
+    "hostingType": "local",
+    "previewUrl": "resources/five-star-token-board.html",
+    "downloadUrl": "resources/five-star-token-board.html",
+    "spotlight": false,
+    "tags": [
+      "Positive Reinforcement",
+      "Visual Supports",
+      "Motivation"
+    ],
     "adaptations": [
       "Change the number of tokens to match the learner’s needs.",
       "Use personalised reinforcement choices.",
       "Pair with explicit instructions and immediate feedback.",
       "Avoid response-cost or punishment practices; seek relevant professional guidance if behaviours communicate unmet needs."
     ],
-    "tags": [
-      "Positive Reinforcement",
-      "Visual Supports",
-      "Motivation"
-    ],
-    "hostingType": "local",
-    "previewUrl": "resources/five-star-token-board.html",
-    "downloadUrl": "resources/five-star-token-board.html",
-    "sourceUrl": null,
-    "creator": "POC demonstration team",
-    "license": "Original demonstration file; review before redistribution",
-    "curriculumContext": "Teaching Supports, not an MOE SPED learning domain. A visual reinforcement aid may support an individualised teaching plan, but it does not itself teach Social-Emotional Learning competencies.",
     "instructionalApproach": "If appropriate, collaboratively define a specific achievable behaviour or task goal and provide consistent, positive feedback. Consider learner preferences, agency and dignity.",
     "assessmentCheck": "Observe whether the agreed skill improves and generalises, rather than using tokens earned as the only indicator of progress.",
     "transferTask": "Use the same positively framed goal during a real routine, then review whether the visual board is still needed.",
+    "curriculumContext": "Teaching Supports, not an MOE SPED learning domain. A visual reinforcement aid may support an individualised teaching plan, but it does not itself teach Social-Emotional Learning competencies.",
     "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
-    "spotlight": false
+    "license": "Original demonstration file; review before redistribution"
   },
   {
     "id": "my-visual-schedule",
     "title": "My Visual Schedule",
     "domain": "Daily Living Skills",
-    "school": "Demonstration Resource",
     "description": "Follow a short routine, mark steps as done and change their order.",
     "learningObjective": "Recognise the next activity and track completion of a familiar sequence.",
     "suggestedUse": "Preview the routine, then support transitions using objects, photographs or familiar cues.",
+    "school": "Demonstration Resource",
+    "creator": "POC demonstration team",
+    "hostingType": "local",
+    "previewUrl": "resources/my-visual-schedule.html",
+    "downloadUrl": "resources/my-visual-schedule.html",
+    "spotlight": false,
+    "tags": [
+      "Routines",
+      "Transitions",
+      "Independence"
+    ],
     "adaptations": [
       "Replace the example routine with the learner’s real routine.",
       "Shorten the list to two or three steps.",
       "Pair words with individualised photographs.",
       "Individualised objects, photographs or AAC symbols may be more meaningful than generic emojis."
     ],
-    "tags": [
-      "Routines",
-      "Transitions",
-      "Independence"
-    ],
-    "hostingType": "local",
-    "previewUrl": "resources/my-visual-schedule.html",
-    "downloadUrl": "resources/my-visual-schedule.html",
-    "sourceUrl": null,
-    "creator": "POC demonstration team",
-    "license": "Original demonstration file; review before redistribution",
-    "curriculumContext": "Daily Living Skills: routines, participation and increasing independence across familiar contexts. Illustrative application; specific TLS outcomes not verified.",
     "instructionalApproach": "Model how to check what is next, practise in a predictable routine, and fade prompts based on observed learner readiness.",
     "assessmentCheck": "Observe whether the learner anticipates or transitions to the next step, noting the type and level of support needed.",
     "transferTask": "Use corresponding real-world visual cues during an actual classroom, home or community routine.",
+    "curriculumContext": "Daily Living Skills: routines, participation and increasing independence across familiar contexts. Illustrative application; specific TLS outcomes not verified.",
     "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
-    "spotlight": false
+    "license": "Original demonstration file; review before redistribution"
   },
   {
     "id": "workplace-sorting-practice",
     "title": "Workplace Sorting Practice",
     "domain": "Vocational Education",
-    "school": "Demonstration Resource",
     "description": "Select workplace objects and sort them into the correct storage areas.",
     "learningObjective": "Match common workplace items to their designated storage categories.",
     "suggestedUse": "Practise onscreen first and transfer to an actual classroom or simulated work area.",
+    "school": "Demonstration Resource",
+    "creator": "POC demonstration team",
+    "hostingType": "local",
+    "previewUrl": "resources/workplace-sorting-practice.html",
+    "downloadUrl": "resources/workplace-sorting-practice.html",
+    "spotlight": false,
+    "tags": [
+      "Work Readiness",
+      "Sorting",
+      "Matching"
+    ],
     "adaptations": [
       "Use photographs of the school’s actual workstations.",
       "Begin with only two categories.",
       "Add workplace labels and a physical sorting task.",
       "Use workplace-specific storage procedures and photographs; explicitly teach safe handling of materials in context."
     ],
-    "tags": [
-      "Work Readiness",
-      "Sorting",
-      "Matching"
-    ],
-    "hostingType": "local",
-    "previewUrl": "resources/workplace-sorting-practice.html",
-    "downloadUrl": "resources/workplace-sorting-practice.html",
-    "sourceUrl": null,
-    "creator": "POC demonstration team",
-    "license": "Original demonstration file; review before redistribution",
-    "curriculumContext": "Vocational Education: foundational work-readiness routines such as categorisation and organising materials. Illustrative application; not verified against VE TLS outcome codes.",
     "instructionalApproach": "Demonstrate one sorting example in the actual work environment, provide guided practice, and fade cues while checking accuracy.",
     "assessmentCheck": "Observe sorting accuracy and independence with new items; record the prompting required and whether worksite expectations are met.",
     "transferTask": "Sort actual office, pantry and cleaning materials into correctly labelled locations in a supervised simulated workplace.",
+    "curriculumContext": "Vocational Education: foundational work-readiness routines such as categorisation and organising materials. Illustrative application; not verified against VE TLS outcome codes.",
     "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
-    "spotlight": false
+    "license": "Original demonstration file; review before redistribution"
   },
   {
     "id": "colour-pattern-maker",
     "title": "Colour Pattern Maker",
     "domain": "Numeracy",
-    "school": "Demonstration Resource",
     "description": "Extend and check repeating patterns using red, blue and yellow labelled tiles (AB, AAB or ABC).",
     "learningObjective": "Extend and reproduce repeating AB, AAB and ABC patterns.",
     "suggestedUse": "Model and extend AB, AAB and ABC patterns with physical tiles or classroom objects before using the screen.",
+    "school": "Demonstration Resource",
+    "creator": "POC demonstration team",
+    "hostingType": "local",
+    "previewUrl": "resources/colour-pattern-maker.html",
+    "downloadUrl": "resources/colour-pattern-maker.html",
+    "spotlight": false,
+    "tags": [
+      "Patterns",
+      "Colours",
+      "Sequencing"
+    ],
     "adaptations": [
       "Use only two choices to start.",
       "Pair colours with shapes or symbols.",
       "Invite students to design their own patterns once ready.",
       "Offer shape or symbol cues for learners with colour-vision differences; the activity already includes letter labels."
     ],
-    "tags": [
-      "Patterns",
-      "Colours",
-      "Sequencing"
-    ],
-    "hostingType": "local",
-    "previewUrl": "resources/colour-pattern-maker.html",
-    "downloadUrl": "resources/colour-pattern-maker.html",
-    "sourceUrl": null,
-    "creator": "POC demonstration team",
-    "license": "Original demonstration file; review before redistribution",
-    "curriculumContext": "Numeracy: noticing, describing and extending repeating patterns. This is not an Arts learning outcome simply because it uses colours.",
     "instructionalApproach": "Model a repeating unit using physical coloured objects, demonstrate one complete pattern, then fade to independent continuation.",
     "assessmentCheck": "Ask the learner to build a new repeating sequence with manipulatives and note independent accuracy or prompts.",
     "transferTask": "Make patterns using classroom objects, bead sequences or alternating items during a real-world sorting task.",
+    "curriculumContext": "Numeracy: noticing, describing and extending repeating patterns. This is not an Arts learning outcome simply because it uses colours.",
     "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
-    "spotlight": false
+    "license": "Original demonstration file; review before redistribution"
   },
   {
     "id": "rhythm-and-movement-pads",
     "title": "Rhythm and Movement Pads",
     "domain": "Physical Education",
-    "school": "Demonstration Resource",
     "description": "Choose movement cues, assemble a short sequence and play it back with optional sounds.",
     "learningObjective": "Follow and imitate a simple sequence of movement prompts.",
     "suggestedUse": "Use onscreen cues to structure an adult-supported movement activity with appropriate seated or standing options.",
+    "school": "Demonstration Resource",
+    "creator": "POC demonstration team",
+    "hostingType": "local",
+    "previewUrl": "resources/rhythm-and-movement-pads.html",
+    "downloadUrl": "resources/rhythm-and-movement-pads.html",
+    "spotlight": false,
+    "tags": [
+      "Movement",
+      "Rhythm",
+      "Sequencing"
+    ],
     "adaptations": [
       "Offer seated movement alternatives.",
       "Use visual cues without sound when preferred.",
       "Shorten sequences for learners who need fewer steps.",
       "Check individual movement, mobility and sensory needs; the digital sequence is a cue, not an exercise prescription."
     ],
-    "tags": [
-      "Movement",
-      "Rhythm",
-      "Sequencing"
-    ],
-    "hostingType": "local",
-    "previewUrl": "resources/rhythm-and-movement-pads.html",
-    "downloadUrl": "resources/rhythm-and-movement-pads.html",
-    "sourceUrl": null,
-    "creator": "POC demonstration team",
-    "license": "Original demonstration file; review before redistribution",
-    "curriculumContext": "Physical Education: opportunity for participation in simple movement sequences. A sequence-matching interface alone is not proof of a PE learning outcome.",
     "instructionalApproach": "Provide an adult-led movement demonstration, adapt to safe seated or standing participation, and encourage learner choice of pace.",
     "assessmentCheck": "Observe whether the learner performs or selects an adapted movement sequence with agreed levels of support.",
     "transferTask": "Use the selected sequence in a supervised physical movement session rather than counting taps alone as PE participation.",
+    "curriculumContext": "Physical Education: opportunity for participation in simple movement sequences. A sequence-matching interface alone is not proof of a PE learning outcome.",
     "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
-    "spotlight": false
+    "license": "Original demonstration file; review before redistribution"
   },
   {
     "id": "visual-focus-timer",
     "title": "Visual Focus Timer",
     "domain": "Teaching Supports",
-    "school": "Demonstration Resource",
     "description": "A large, adjustable countdown with pause, resume, reset and visual progress.",
     "learningObjective": "Use a predictable visual cue to anticipate the end of a short activity.",
     "suggestedUse": "Offer a predictable end-of-activity cue only when it reduces uncertainty and is appropriate for the individual.",
+    "school": "Demonstration Resource",
+    "creator": "POC demonstration team",
+    "hostingType": "local",
+    "previewUrl": "resources/visual-focus-timer.html",
+    "downloadUrl": "resources/visual-focus-timer.html",
+    "spotlight": false,
+    "tags": [
+      "Time Awareness",
+      "Transitions",
+      "Visual Support"
+    ],
     "adaptations": [
       "Set a duration suited to the specific activity.",
       "Use an accompanying now/next visual.",
       "Turn off sound and avoid timing tasks where it increases distress.",
       "Use flexible timing for learners needing more processing time; avoid making completion speed a success criterion."
     ],
-    "tags": [
-      "Time Awareness",
-      "Transitions",
-      "Visual Support"
-    ],
-    "hostingType": "local",
-    "previewUrl": "resources/visual-focus-timer.html",
-    "downloadUrl": "resources/visual-focus-timer.html",
-    "sourceUrl": null,
-    "creator": "POC demonstration team",
-    "license": "Original demonstration file; review before redistribution",
-    "curriculumContext": "Teaching Supports, not an MOE SPED learning domain. A visual timer may support transitions and predictability across learning domains.",
     "instructionalApproach": "Explain what the end of the timer means, offer learner control when appropriate, and pair it with a now/next cue.",
     "assessmentCheck": "Observe whether the cue helps participation or transitions; stop or modify use if it creates distress.",
     "transferTask": "Introduce the same cue to a familiar real-world routine where the learner benefits from predictable transitions.",
+    "curriculumContext": "Teaching Supports, not an MOE SPED learning domain. A visual timer may support transitions and predictability across learning domains.",
     "reviewStatus": "Prototype demonstration — not independently approved for classroom use",
-    "spotlight": false
+    "license": "Original demonstration file; review before redistribution"
   },
   {
     "id": "message-detective",
     "title": "Message Detective",
     "domain": "Digital Literacy",
-    "school": "Demonstration Resource",
+    "additionalDomains": [
+      "Healthy and Safe Relationships"
+    ],
     "description": "Use a simulated smartphone to explore fictional messages, inspect the sender and request, and choose a safe next action.",
     "learningObjective": "Check the sender and request in a simulated message before selecting a protective response.",
     "suggestedUse": "Model the message-checking routine, then allow guided practice with gradually reduced prompts.",
-    "adaptations": [
-      "Use one message at a time and discuss why a response is safe.",
-      "Turn hints on for initial teaching and off for practice.",
-      "Offer verbal responses or pointing as an alternative to independent tapping."
-    ],
+    "school": "Demonstration Resource",
+    "creator": "SPEDTech POC demonstration",
+    "hostingType": "local",
+    "previewUrl": "resources/message-detective.html",
+    "downloadUrl": "resources/message-detective.html",
+    "spotlight": true,
+    "skillArea": "Digital safety",
+    "context": "Living",
     "tags": [
       "Digital Literacy",
       "Cyber Safety",
       "Safe Messages"
     ],
-    "hostingType": "local",
-    "previewUrl": "resources/message-detective.html",
-    "downloadUrl": "resources/message-detective.html",
-    "sourceUrl": null,
-    "creator": "SPEDTech POC demonstration",
-    "license": "Original demonstration HTML; review before redistribution",
-    "curriculumContext": "Illustrative Digital Literacy learning context; formal curriculum alignment has not been independently verified.",
+    "adaptations": [
+      "Use one message at a time and discuss why a response is safe.",
+      "Turn hints on for initial teaching and off for practice.",
+      "Offer verbal responses or pointing as an alternative to independent tapping."
+    ],
     "instructionalApproach": "Demonstrate checking the message context, rehearsing a safe response and asking for help when uncertain.",
     "assessmentCheck": "Record whether the learner inspects sender and request, chooses a protective action and uses prompts.",
     "transferTask": "Practise checking messages in an approved real app with a teacher; do not infer transfer from simulation success.",
+    "curriculumContext": "Illustrative Digital Literacy learning context; formal curriculum alignment has not been independently verified.",
     "reviewStatus": "Prototype demonstration — requires educator review before classroom use",
-    "additionalDomains": [
-      "Healthy and Safe Relationships"
-    ],
-    "spotlight": false,
-    "skillArea": "Digital safety",
-    "context": "Living",
+    "license": "Original demonstration HTML; review before redistribution",
     "resourceType": "Interactive HTML simulation"
   },
   {
     "id": "privacy-studio",
     "title": "Privacy Studio",
     "domain": "Digital Literacy",
-    "school": "Demonstration Resource",
+    "additionalDomains": [
+      "Healthy and Safe Relationships"
+    ],
     "description": "Change a fictional photo post by hiding identifying details, selecting who can view it, requesting permission and previewing the outcome.",
     "learningObjective": "Identify details to remove and set a suitable audience before previewing a simulated post.",
     "suggestedUse": "Let learners manipulate the visual post and see what changes, with an adult discussing consent and privacy.",
-    "adaptations": [
-      "Switch hotspot guides on or off as appropriate.",
-      "Prompt identification of private details before revealing buttons.",
-      "Pair with role-play about seeking permission before posting."
-    ],
+    "school": "Demonstration Resource",
+    "creator": "SPEDTech POC demonstration",
+    "hostingType": "local",
+    "previewUrl": "resources/privacy-studio.html",
+    "downloadUrl": "resources/privacy-studio.html",
+    "spotlight": false,
+    "skillArea": "Online privacy",
+    "context": "Living",
     "tags": [
       "Digital Literacy",
       "Privacy",
       "Visual Editing"
     ],
-    "hostingType": "local",
-    "previewUrl": "resources/privacy-studio.html",
-    "downloadUrl": "resources/privacy-studio.html",
-    "sourceUrl": null,
-    "creator": "SPEDTech POC demonstration",
-    "license": "Original demonstration HTML; review before redistribution",
-    "curriculumContext": "Illustrative Digital Literacy learning context; formal curriculum alignment has not been independently verified.",
+    "adaptations": [
+      "Switch hotspot guides on or off as appropriate.",
+      "Prompt identification of private details before revealing buttons.",
+      "Pair with role-play about seeking permission before posting."
+    ],
     "instructionalApproach": "Model identifying personal details and changing one setting at a time; fade cues and ask the learner to explain actions.",
     "assessmentCheck": "Observe whether the learner notices name/location details, changes the audience and requests permission, noting prompts used.",
     "transferTask": "Practise similar choices in a teacher-approved app without uploading real student information.",
+    "curriculumContext": "Illustrative Digital Literacy learning context; formal curriculum alignment has not been independently verified.",
     "reviewStatus": "Prototype demonstration — requires educator review before classroom use",
-    "additionalDomains": [
-      "Healthy and Safe Relationships"
-    ],
-    "spotlight": false,
-    "skillArea": "Online privacy",
-    "context": "Living",
+    "license": "Original demonstration HTML; review before redistribution",
     "resourceType": "Interactive HTML simulation"
   },
   {
     "id": "work-shift",
     "title": "Work Shift: Pack an Order",
     "domain": "Vocational Education",
-    "school": "Demonstration Resource",
+    "additionalDomains": [
+      "Digital Literacy"
+    ],
     "description": "Read a simulated digital order, add visual stock items to a packing tray, check quantities and ask for clarification when instructions are incomplete.",
     "learningObjective": "Select the correct simulated stock items and quantities, then check the order and seek clarification when needed.",
     "suggestedUse": "Pair the digital simulation with real packing materials and discuss the difference between a virtual task and workplace performance.",
-    "adaptations": [
-      "Offer tap-to-add for learners who cannot drag items.",
-      "Display product picture cues, then fade them when appropriate.",
-      "Let learners check against a physical sample and repeat with new items."
-    ],
+    "school": "Demonstration Resource",
+    "creator": "SPEDTech POC demonstration",
+    "hostingType": "local",
+    "previewUrl": "resources/work-shift.html",
+    "downloadUrl": "resources/work-shift.html",
+    "spotlight": false,
+    "skillArea": "Digital workplace tasks",
+    "context": "Working",
     "tags": [
       "Digital Literacy",
       "Vocational Education",
       "Workplace Instructions"
     ],
-    "hostingType": "local",
-    "previewUrl": "resources/work-shift.html",
-    "downloadUrl": "resources/work-shift.html",
-    "sourceUrl": null,
-    "creator": "SPEDTech POC demonstration",
-    "license": "Original demonstration HTML; review before redistribution",
-    "curriculumContext": "Illustrative Digital Literacy learning context; formal curriculum alignment has not been independently verified.",
+    "adaptations": [
+      "Offer tap-to-add for learners who cannot drag items.",
+      "Display product picture cues, then fade them when appropriate.",
+      "Let learners check against a physical sample and repeat with new items."
+    ],
     "instructionalApproach": "Demonstrate reading a digital order and completing a physical equivalent; teach a routine for checking work and asking for clarification.",
     "assessmentCheck": "Check item selection, quantity accuracy, self-checking and clarification-seeking; record prompts separately.",
     "transferTask": "Try a staff-supervised real packing task with a suitable digital or printed instruction list.",
+    "curriculumContext": "Illustrative Digital Literacy learning context; formal curriculum alignment has not been independently verified.",
     "reviewStatus": "Prototype demonstration — requires educator review before classroom use",
-    "additionalDomains": [
-      "Digital Literacy"
-    ],
-    "spotlight": false,
-    "skillArea": "Digital workplace tasks",
-    "context": "Working",
+    "license": "Original demonstration HTML; review before redistribution",
     "resourceType": "Interactive HTML simulation"
   }
 ]
