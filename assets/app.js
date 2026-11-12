@@ -251,10 +251,23 @@
     $('#schoolFilter').value = '';
     results();
   }
-  async function loadResources() {
-    grid.setAttribute('aria-busy','true');
+    async function loadResources() {
+    grid.setAttribute('aria-busy', 'true');
     $('#loadError').hidden = true;
     $('#emptyState').hidden = true;
+    $('#resultsCount').textContent = 'Loading resources…';
+    announce('Loading resources.');
+
+    const placeholders = Array.from({ length: 3 }, () => {
+      const card = el('div', 'resource-card resource-skeleton');
+      card.setAttribute('aria-hidden', 'true');
+      for (let index = 0; index < 3; index++) {
+        card.append(el('span', 'skeleton-line'));
+      }
+      return card;
+    });
+    grid.replaceChildren(...placeholders);
+
     try {
       const response = await fetch('resources.json',{cache:'no-store'});
       if (!response.ok) throw new Error('HTTP ' + response.status);
@@ -279,7 +292,7 @@
       $('#loadError').hidden=false;
       $('#loadErrorText').textContent = location.protocol === 'file:'
         ? 'Open the published website or use a local web server. The gallery cannot load JSON when opened as a file.'
-        : 'Check resources.json beside index.html and refresh. The catalogue could not be loaded.';
+        : 'We couldn’t load the teaching resources. Select Try again to reload the catalogue.';
       announce('Unable to load the resource catalogue.');
     } finally {grid.setAttribute('aria-busy','false');}
   }
