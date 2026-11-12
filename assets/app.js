@@ -8,10 +8,8 @@
   const SUPPORT_TYPE = 'Teaching Supports';
   const ICONS = {'Communication and Language':'💬','Numeracy':'🧮','Daily Living Skills':'☀️','Social-Emotional Learning':'⭐','Vocational Education':'🗂️','Arts':'🎨','Physical Education':'🎵','Digital Literacy':'💻','Healthy and Safe Relationships':'🤝','Teaching Supports':'🧩'};
   const $ = selector => document.querySelector(selector);
-  const state = {resources: [], lastOpener: null, announceTimer: null, focus: 'all'};
+  const state = {resources: [], announceTimer: null, focus: 'all'};
   const grid = $('#galleryGrid');
-  const dialog = $('#resourceDialog');
-  const modalStatus = $('#modalStatus');
 
   function el(tag, className, content) {
     const node = document.createElement(tag);
@@ -128,21 +126,14 @@
     add(body, 'p', 'resource-domain', domainText(resource));
     add(body, 'h3', '', resource.title);
     add(body, 'p', 'resource-description', resource.description);
-    add(body, 'p', 'use-heading', resource.domain === SUPPORT_TYPE ? 'Support purpose' : 'Learning objective');
-    add(body, 'p', 'resource-objective', optional(resource.learningObjective, 'Learning objective not provided; please check with the creator.'));
-    add(body, 'p', 'use-heading', 'Suggested classroom use');
-    add(body, 'p', 'suggested-use', optional(resource.suggestedUse, 'Suggested use not provided; review before classroom use.'));
     const tags = el('div', 'resource-tags');
     (Array.isArray(resource.tags) ? resource.tags.slice(0, 3) : []).forEach(tag => {
       if (typeof tag === 'string') add(tags, 'span', 'tag', tag);
     });
     body.append(tags);
     const footer = el('div', 'resource-footer');
-    add(footer, 'p', 'contributor', 'Contributor: ' + optional(resource.school, 'Not specified'));
+    if (resource.school?.trim()) add(footer, 'p', 'contributor', 'Contributor: ' + resource.school);
     footer.append(makeActions(resource));
-    const aboutButton = button('about-button', 'About this resource →', event => openAbout(resource, event.currentTarget));
-    aboutButton.setAttribute('aria-label', 'About ' + resource.title);
-    footer.append(aboutButton);
     card.append(top, body, footer);
     return card;
   }
@@ -158,14 +149,8 @@
     add(card, 'p', 'spotlight-eyebrow', domainText(resource));
     add(card, 'h3', '', resource.title);
     add(card, 'p', 'spotlight-description', resource.description);
-    add(card, 'p', 'spotlight-label spotlight-objective-label', 'Learning objective');
-    add(card, 'p', 'spotlight-objective', optional(resource.learningObjective, 'Objective not provided.'));
-    add(card, 'p', 'spotlight-label spotlight-use-label', 'Suggested classroom use');
-    add(card, 'p', 'spotlight-use', optional(resource.suggestedUse, 'Review before classroom use.'));
     const actions = makeActions(resource, 'spotlight-actions');
-    const aboutButton = button('button tertiary', 'About this resource', event => openAbout(resource, event.currentTarget));
-    aboutButton.setAttribute('aria-label', 'About featured resource: ' + resource.title);
-    actions.append(aboutButton);
+    if (resource.school?.trim()) add(card, 'p', 'contributor', 'Contributor: ' + resource.school);
     card.append(actions);
     host.append(card);
   }
@@ -304,16 +289,6 @@
       return response.ok && !(response.headers.get('content-type') || '').includes('text/plain');
     } catch {return false;}
   }
-  function setModalState(message) {if (modalStatus) modalStatus.textContent = message;}
-  function setupDialog(resource, opener) {
-    state.lastOpener=opener;
-    $('#modalTitle').textContent=resource.title;
-    $('#modalDescription').textContent = domainText(resource) + ' · ' + resourceType(resource);
-    $('#aboutPane').hidden=true;
-    dialog.showModal();
-    $('#closeModal').focus();
-    setModalState('Resource details opened for ' + resource.title);
-  }
   async function downloadResource(resource, control) {
     if (!hasDownload(resource) || isExternal(resource)) return;
     const label = control.textContent;
@@ -330,43 +305,6 @@
       announce('Download requested for ' + resource.title);
     } finally { control.disabled=false; control.textContent=label; }
   }
-  function detailField(host, label, value, fallback) {
-    add(host, 'h3','',label);
-    add(host, 'p','',optional(value, fallback));
-  }
-  function externalSourceLink(host, label, url) {
-    if (!secureUrl(url)) return;
-    add(host,'h3','',label);
-    const link = add(host,'a','source-link',url);
-    link.href = url; link.target = '_blank'; link.rel='noopener noreferrer';
-    link.setAttribute('aria-label', label + ' (opens in a new tab)');
-  }
-  function openAbout(resource, opener) {
-    const host = $('#aboutPane');
-    host.replaceChildren();
-
-    const addDetail = (section, label, value) => {
-      if (typeof value === 'string' && value.trim()) {
-        detailField(section, label, value);
-      }
-    };
-
-    addDetail(host, 'Description', resource.description);
-
-    const source = el('section', 'about-source');
-    addDetail(source, 'Contributor', resource.school);
-    externalSourceLink(source, 'Source information', resource.sourceUrl);
-    externalSourceLink(source, 'Source repository', resource.sourceRepositoryUrl);
-
-    if (isExternal(resource)) {
-      add(source, 'p', '', 'Review the external activity before classroom use.');
-    }
-
-    if (source.childElementCount) host.append(source);
-    setupDialog(resource, opener);
-    host.hidden = false;
-  }
-  function closeDialog(){if (dialog.open)dialog.close();}
   $('#showAll').addEventListener('click',()=>setFocus('all'));
   $('#showDL').addEventListener('click',()=>setFocus('dl'));
   $('#filterForm').addEventListener('submit',event=>event.preventDefault());
@@ -376,23 +314,5 @@
   $('#schoolFilter').addEventListener('change',results);
   $('#emptyReset').addEventListener('click',resetFilters);
   $('#retryButton').addEventListener('click',loadResources);
-  $('#closeModal').addEventListener('click',closeDialog);
-  dialog.addEventListener('close',()=>{
-    setModalState('Dialog closed');
-    const opener=state.lastOpener;
-    state.lastOpener=null;
-    if (opener && opener.isConnected) opener.focus();
-  });
-  dialog.addEventListener('click',event=>{if(event.target===dialog)closeDialog();});
-  dialog.addEventListener('keydown',event=>{
-    if (event.key==='Escape') {event.preventDefault();closeDialog();return;}
-    if (event.key!=='Tab') return;
-    const focusable=[...dialog.querySelectorAll('a[href],button:not([disabled])')]
-      .filter(node=> !node.hidden && !node.closest('[hidden]') && node.getClientRects().length);
-    if (!focusable.length) return;
-    const first=focusable[0], last=focusable[focusable.length-1];
-    if (event.shiftKey && document.activeElement===first){event.preventDefault();last.focus();}
-    else if (!event.shiftKey && document.activeElement===last){event.preventDefault();first.focus();}
-  });
   loadResources();
 })();
