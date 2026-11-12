@@ -8,7 +8,7 @@
   <title>SPED Interactive Showcase — Digital Literacy Focus</title>
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="stylesheet" href="assets/spotlight.css">
-<script src="assets/app.js?v=about-cms-fields" defer></script>
+<script src="assets/app.js?v=compact-showcase" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -25,10 +25,10 @@
     <section class="hero" aria-labelledby="pageTitle">
       <div class="container hero-layout">
         <div>
-          <p class="eyebrow">EXPLORE · TRY · ADAPT</p>
+
           <h1 id="pageTitle">Teaching ideas,<br><span>ready to explore.</span></h1>
-          <p class="hero-description">Discover, try and adapt interactive SPED resources, with Digital Literacy in the spotlight.</p>
-          <p class="hero-detail">Start with practical Digital Literacy teaching ideas, then explore resources across other learning domains. Every activity can be tried in-browser and downloaded for review and adaptation.</p>
+          <p class="hero-description">Try and download interactive SPED teaching activities.</p>
+
           <a class="hero-link" href="#gallery">Browse resources <span aria-hidden="true">↓</span></a>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -39,13 +39,13 @@
     </section>
 
     <section id="spotlight" class="spotlight-section container" aria-labelledby="spotlightHeading" hidden>
-      <div class="spotlight-intro"><p class="section-eyebrow">SELECTED BY SPEDTECH</p><h2 id="spotlightHeading">Resource Spotlight</h2><p>A selected Digital Literacy teaching idea. Explore other learning domains in the gallery below.</p></div>
+      <div class="spotlight-intro"><h2 id="spotlightHeading">Resource Spotlight</h2></div>
       <div id="spotlightContent"></div>
     </section>
 
     <section class="library-section container" id="gallery" aria-labelledby="galleryHeading">
       <div class="library-heading">
-        <div><p class="section-eyebrow">THE RESOURCE COLLECTION</p><h2 id="galleryHeading">Explore teaching resources</h2><p class="supporting">Digital Literacy is our current focus, alongside other SPED learning domains and Teaching Supports. All activities use demonstration content and require educator review.</p></div>
+        <div><h2 id="galleryHeading">Explore teaching resources</h2></div>
         <span id="collectionTotal" class="collection-total" aria-hidden="true"></span>
       </div>
       <div class="focus-switcher" role="group" aria-label="Resource focus">
@@ -60,7 +60,7 @@
         </div>
         <div id="advancedFilters" class="advanced-filters">
           <div class="field"><label for="domainFilter">Learning domain / focus area</label><select id="domainFilter"><option value="">All domains and resource types</option></select></div>
-          <div class="field"><label for="schoolFilter">Contributing school</label><select id="schoolFilter"><option value="">All contributors</option></select></div>
+          <div class="field"><label for="schoolFilter">Contributor</label><select id="schoolFilter"><option value="">All contributors</option></select></div>
           <button type="reset" id="resetFilters" class="reset-button">Clear filters</button>
         </div>
       </form>
@@ -71,30 +71,17 @@
       <div id="loadError" class="empty-state error-state" hidden><span aria-hidden="true">!</span><h3>Unable to load the catalogue</h3><p id="loadErrorText">The resource list could not be loaded.</p><button type="button" class="button secondary" id="retryButton">Try again</button></div>
     </section>
 
-    <section class="guidance-section" id="educatorInfo" aria-labelledby="guidanceTitle"><div class="container guidance-grid">
-      <div><p class="section-eyebrow">FOR EDUCATORS</p><h2 id="guidanceTitle">Explore first.<br>Adapt thoughtfully.</h2><p>These are illustrative teaching resources, not verified curriculum outcome mappings or ready-made interventions. Our POC spotlights Digital Literacy, but also includes resources across SPED learning domains. Pair onscreen practice with authentic contexts, and adapt the prompting, response options and difficulty for individual learners.</p></div>
-      <div class="guidance-points"><div><span class="point-index">01</span><div><h3>Try an activity</h3><p>Open the full-page teaching activity in a new tab, then return to the gallery.</p></div></div><div><span class="point-index">02</span><div><h3>Download the HTML</h3><p>Save an available standalone file, then review and modify it offline.</p></div></div><div><span class="point-index">03</span><div><h3>Review before use</h3><p>Check content, suitability, privacy, licensing, accessibility and functionality before classroom use.</p></div></div></div>
-    </div></section>
+    <section class="container" id="educatorInfo" aria-labelledby="guidanceTitle">
+      <h2 id="guidanceTitle">Review before classroom use</h2>
+      <p>Check accessibility, suitability, privacy and reuse permissions. Adapt activities to your learners.</p>
+    </section>
   </main>
 
   <footer class="site-footer"><div class="container">
       <strong>SPED Interactive Showcase</strong>
-      <p class="removal-notice"><strong>Resource removal or attribution concerns:</strong> If you created or own a resource featured here and would like it removed, or if you have concerns about its attribution, privacy, copyright or suitability, please contact the <strong>SPEDTech team</strong> to request a review or removal.</p>
-      <div class="contact-actions" aria-label="SPEDTech contact options">
-        <button type="button" disabled title="Contact address to be confirmed">Contribute a Resource — coming soon</button>
-        <button type="button" disabled title="Contact address to be confirmed">Request Removal — coming soon</button>
-      </div>
-      <p class="contact-status">Both options will be enabled once an approved contact email is confirmed. The website does not currently collect submissions or requests.</p>
-      <p>Public proof of concept. Fictional demonstration resources; only locally hosted resources are currently listed. Not affiliated with or endorsed by Singapore's Ministry of Education.</p>
-      <p><strong>Content governance:</strong> Resources should be reviewed for learning purpose, suitability, privacy, functionality, accessibility and licensing before inclusion in the public gallery. See the contributor review checklist in the repository. Do not submit student data or confidential materials.</p>
+      <p>Public prototype with fictional activities. Independent of Singapore’s Ministry of Education.</p>
+      <p>Contact details for contributions and removal requests are pending.</p>
     </div></footer>
 
-  <dialog id="resourceDialog" class="resource-dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
-    <div class="dialog-shell">
-      <div class="dialog-header"><div><p class="modal-kicker">RESOURCE DETAILS</p><h2 id="modalTitle">About this resource</h2><p id="modalDescription" class="modal-description"></p></div><button type="button" id="closeModal" class="icon-button" aria-label="Close resource details">✕</button></div>
-      <div id="aboutPane" class="about-pane" hidden></div>
-      <p id="modalStatus" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
-    </div>
-  </dialog>
 </body>
 </html>
