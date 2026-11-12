@@ -351,40 +351,7 @@
       }
     };
 
-    addDetail(host, 'Description', resource.description);
-    addDetail(
-      host,
-      resource.domain === SUPPORT_TYPE ? 'Support purpose' : 'Learning objective',
-      resource.learningObjective
-    );
-    addDetail(host, 'Suggested classroom use', resource.suggestedUse);
-
-    const adaptations = Array.isArray(resource.adaptations)
-      ? resource.adaptations.filter(item => typeof item === 'string' && item.trim())
-      : [];
-
-    if (adaptations.length) {
-      add(host, 'h3', '', 'Possible adaptations');
-      const list = el('ul');
-      adaptations.forEach(item => add(list, 'li', '', item));
-      host.append(list);
-    }
-
-    addDetail(host, 'Teaching approach', resource.instructionalApproach);
-    addDetail(host, 'What to observe', resource.assessmentCheck);
-    addDetail(host, 'Transfer beyond the screen', resource.transferTask);
-    addDetail(host, 'Curriculum relevance (illustrative)', resource.curriculumContext);
-
     const source = el('section', 'about-source');
-    addDetail(source, 'Contributor', resource.school);
-    addDetail(source, 'Creator', resource.creator);
-    detailField(source, 'Review status', resource.reviewStatus, 'Review status not supplied.');
-    detailField(
-      source,
-      'Reuse permissions',
-      resource.reusePermission || resource.license,
-      'Check with the rights holder before adapting or redistributing.'
-    );
     externalSourceLink(source, 'Source information', resource.sourceUrl);
     externalSourceLink(source, 'Source repository', resource.sourceRepositoryUrl);
 
