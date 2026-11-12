@@ -351,7 +351,10 @@
       }
     };
 
+    addDetail(host, 'Description', resource.description);
+
     const source = el('section', 'about-source');
+    addDetail(source, 'Contributor', resource.school);
     externalSourceLink(source, 'Source information', resource.sourceUrl);
     externalSourceLink(source, 'Source repository', resource.sourceRepositoryUrl);
 
@@ -359,7 +362,7 @@
       add(source, 'p', '', 'Review the external activity before classroom use.');
     }
 
-    host.append(source);
+    if (source.childElementCount) host.append(source);
     setupDialog(resource, opener);
     host.hidden = false;
   }
